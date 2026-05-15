@@ -1,0 +1,369 @@
+▬▬▬▬▬▬▬▬▬▬▬▬
+AMEYA
+DIGITAL MARKETING AGENCY
+─────────────────────────────────
+WEBSITE BLUEPRINT & ARCHITECTURE DOCUMENT
+Boundless Possibilities. Limitless Growth.
+Prepared for internal planning and developer handoff
+Version 1.0  |  May 2025
+1. Theme & Visual Direction
+Based on your logo and branding, the recommended theme is Luxury Dark — a premium, editorial aesthetic that mirrors the gold-on-black identity of the Ameya logo. Here is the full rationale and style specification.
+1.1  Recommended Theme: Luxury Dark Gold
+This is the strongest match for your brand identity. The gold metallic logo on black background immediately signals premium positioning. Your competitors in digital marketing typically use bland blue/white themes — the Luxury Dark theme will make Ameya stand out memorably.
+Theme Specification
+Theme Name
+Luxury Dark Gold
+Primary Background
+#0A0A0A (Near Black) — creates depth and contrast
+Secondary Background
+#1A1A1A (Dark Charcoal) — for cards and panels
+Primary Accent
+#C9A84C (Gold) — all CTAs, highlights, icons, borders
+Light Accent
+#E8C97A (Light Gold) — hover states and gradients
+Text Primary
+#FFFFFF (White) — headings and bold text
+Text Secondary
+rgba(255,255,255,0.55) — body copy and descriptions
+Display Font
+Cormorant Garamond (serif) — headings, logo, hero
+Body Font
+Jost or DM Sans (light weight) — paragraphs, nav, UI
+Aesthetic Tone
+Luxury / Editorial — minimal, spacious, premium
+Inspiration
+High-end consultancy, luxury fashion, premium tech agencies
+1.2  Why This Theme Works for Ameya
+Your logo is gold on black — the website must be an extension of that identity
+Dark backgrounds increase perceived premium value in B2B services
+Gold accents create strong visual hierarchy — everything important pops
+Cormorant Garamond gives sophisticated editorial presence
+Spaced-out layouts with generous whitespace signal confidence
+Stands out completely from typical blue/purple digital marketing sites
+1.3  White Version Usage
+The white horizontal logo (Image 2) should be used for: email signatures, letterheads, printed materials, and any light-background digital collateral. The website itself uses the dark version exclusively.
+1.4  Current Clients to Feature
+Active Client Portfolio
+Beatband
+Music / Entertainment brand — showcase social media, content strategy, branding results
+Ganga Farm
+Agriculture / Organic brand — showcase digital presence, local SEO, awareness campaigns
+2. Website Architecture Overview
+The Ameya website is structured as a 6-page website plus legal pages. Each page has a clear purpose in the customer journey — from discovery to conversion.
+2.1  Site Map
+Pages Overview
+Page 1
+Home — primary landing, brand introduction, services overview, social proof
+Page 2
+About — story, mission, team, values, brand philosophy
+Page 3
+Services — detailed breakdown of all service offerings
+Page 4
+Portfolio / Work — case studies from Beatband, Ganga Farm, and more
+Page 5
+Blog / Insights — articles, marketing tips, thought leadership
+Page 6
+Contact — enquiry form, location, social links, booking
+Legal
+Privacy Policy + Terms of Service (footer links)
+3. Page-by-Page Architecture
+3.1  Home Page (/)
+The home page is the most important page. Its job is to communicate who Ameya is, what you do, and why you're the premium choice — all within the first scroll. Every section pushes visitors toward the Contact page.
+HOME PAGE
+First impression, brand positioning, conversion funnel entry
+Section
+Content / Elements
+Purpose
+Navigation Bar
+Logo (left), nav links (Home, About, Services, Work, Blog, Contact), 'Let's Talk' CTA button
+Wayfinding + conversion
+Hero Section
+Full-screen section: bold headline ('Boundless Possibilities'), subheadline, primary CTA button, scroll indicator, floating statistics badge
+Hook visitor, communicate value, drive action
+Ticker / Marquee
+Scrolling text bar: services list, brand keywords, philosophy phrases
+Energy, movement, premium feel
+Services Teaser
+3 or 4 core service cards with icon, title, brief description, link to Services page
+Show breadth of capabilities quickly
+Clients Section
+Feature Beatband + Ganga Farm with logo/card, project type, brief result
+Build immediate trust and credibility
+Stats Bar
+4 metrics: clients served, campaigns run, industries, years experience
+Social proof through numbers
+Process Teaser
+3-step visual: Discover → Strategy → Execute → Grow
+Reduce friction, explain how you work
+Testimonials
+1–2 client testimonials with name, company, quote
+Word-of-mouth trust building
+CTA Section
+Full-width section: 'Ready to grow?' headline + 'Start a Project' button
+Final conversion push before footer
+Footer
+Logo, tagline, nav links, social icons, legal links, contact email
+Utility + brand consistency
+3.2  About Page (/about)
+The About page builds the emotional connection. Clients hire people, not companies — this page tells your story and establishes trust through personality and values.
+ABOUT PAGE
+Brand story, team, mission, values — builds trust and relatability
+Section
+Content / Elements
+Purpose
+Page Hero
+Bold headline: 'We are Ameya' with short brand story intro
+Set tone and introduce brand identity
+Origin Story
+Paragraph: how and why Ameya was founded, the problem you solve
+Human connection, brand authenticity
+Mission & Vision
+Two-column layout: Mission statement + Vision for clients
+Articulate purpose clearly
+Brand Philosophy
+4 philosophy pillars: Strategy, Creativity, Data, Results — each with icon and short desc
+Differentiation through values
+Team Section
+Founder/team cards with photo, name, role, short bio
+Humanise the brand
+Why Choose Ameya
+5–6 bullet differentiators vs generic agencies
+Overcome objections
+Industries Served
+Icon grid: Music, Agriculture, Fashion, F&B, Tech, Retail (open for more)
+Show range
+CTA Strip
+'Let's build something great' + contact button
+Conversion from About page
+3.3  Services Page (/services)
+The Services page is your sales brochure. Each service should be detailed enough to answer client questions and demonstrate expertise. Use a clean card or accordion layout.
+SERVICES PAGE
+Complete service offerings with detail — the primary decision page
+Section
+Content / Elements
+Purpose
+Page Hero
+Headline: 'What We Do' with intro statement about your approach
+Frame the full offering
+Social Media Management
+Platforms covered, content types, posting schedule, reporting. Tags: Instagram, Facebook, YouTube, LinkedIn
+Core service highlight
+Content Creation
+Reels, graphics, videos, copywriting, brand content. Show sample content types
+Visual services detail
+SEO & Local SEO
+On-page, off-page, Google My Business, local ranking — especially useful for Ganga Farm
+Search visibility service
+Paid Advertising
+Meta Ads, Google Ads — targeting, budgets, ROI focus, campaign types
+Performance marketing
+Branding & Identity
+Logo, brand kit, visual identity, tone of voice, brand guidelines
+Creative services
+Website Design
+Landing pages, business websites — if offered as a service
+Web presence service
+Analytics & Reporting
+Monthly reports, KPI dashboards, strategy reviews
+Accountability & transparency
+Pricing Teaser
+Optional: 'Starting from ₹X/month' or 'Custom packages' with a form to request a quote
+Lower barrier to enquiry
+CTA
+Book a free strategy call / Get a custom proposal
+Convert service browsers
+3.4  Portfolio / Work Page (/work)
+This is your proof page. Case studies here convert better than any other content because they show real results. Start with Beatband and Ganga Farm, and add more as you grow.
+PORTFOLIO / WORK PAGE
+Case studies, client results, visual showcase
+Section
+Content / Elements
+Purpose
+Page Hero
+Headline: 'Our Work' with a line about results-driven approach
+Establish results mindset
+Filter Bar
+Filter buttons: All / Social Media / Branding / SEO / Ads
+Easy navigation by service type
+Beatband Case Study Card
+Logo, industry: Music, services: Social Media + Content, key result (e.g. +200% engagement), thumbnail
+Tangible proof #1
+Ganga Farm Case Study Card
+Logo, industry: Agriculture, services: Local SEO + Branding, key result (e.g. 3x website traffic), thumbnail
+Tangible proof #2
+Case Study Detail Page
+Each card links to a full case study: challenge, approach, execution, results with charts/numbers
+Deep credibility for serious buyers
+Results Stats
+Aggregate numbers across all clients: total impressions, total leads, campaigns
+Macro social proof
+'Your Brand Could Be Here'
+Placeholder card with a CTA to start a project — encourages new clients
+Conversion hook
+3.5  Blog / Insights Page (/blog)
+The blog builds authority and drives organic traffic via SEO. Even 1–2 posts per month on digital marketing topics will help you rank on Google and position Ameya as an expert agency.
+BLOG / INSIGHTS PAGE
+Thought leadership, SEO content, authority building
+Section
+Content / Elements
+Purpose
+Page Hero
+Headline: 'Insights & Ideas' with short intro
+Frame as expert resource
+Featured Post
+Large card for the latest / most important article
+Spotlight best content
+Article Grid
+3-column grid of posts: thumbnail, category tag, title, date, read time
+Content browsing
+Category Filter
+Filter by: Social Media, SEO, Branding, Ads, Case Studies
+Topic navigation
+Article Detail Page
+Full article with: title, author, date, featured image, body, CTA at end
+Full content experience
+Suggested Topics
+10 starter blog titles for Ameya: '5 Instagram Mistakes Businesses Make', 'Why Local SEO Matters for Indian Farms', etc.
+Content planning seed
+Newsletter Signup
+Simple email box: 'Get marketing tips in your inbox'
+List building
+3.6  Contact Page (/contact)
+The Contact page must be frictionless. Make it easy, clear, and reassuring. Offer multiple ways to get in touch. Every field in the form should have a reason to exist.
+CONTACT PAGE
+Lead capture, enquiry, booking — the conversion destination
+Section
+Content / Elements
+Purpose
+Page Hero
+Headline: 'Let's Grow Together' with a welcoming sentence
+Warm, low-pressure opening
+Contact Form
+Fields: Name, Business Name, Email, Phone, Service Interested In (dropdown), Monthly Budget (optional), Message, Submit
+Primary lead capture
+What Happens Next
+3-step process: 'We review your enquiry → Free strategy call → Custom proposal' — reassures the visitor
+Remove hesitation
+Direct Contact Info
+Email address, WhatsApp link, phone number
+For those who prefer direct contact
+Social Links
+Instagram, LinkedIn, Facebook, YouTube — icons with links
+Alternative touchpoints
+Location / Service Area
+Dehradun based, serving clients across India (and globally)
+Geographic trust signal
+Response Time Badge
+We reply within 24 hours
+Reduce anxiety about follow-up
+4. Global Components
+These components appear on every page. Consistency here builds professionalism and brand recognition.
+4.1  Navigation Bar
+Navigation Specifications
+Position
+Fixed top — stays visible while scrolling
+Logo
+Ameya logo (SVG) on left — links to Home
+Links
+Home · About · Services · Work · Blog · Contact
+CTA Button
+'Let's Talk' — gold border button, opens Contact page
+Scroll Behaviour
+Transparent at top, dark background with gold border on scroll
+Mobile
+Hamburger menu icon, full-screen slide-in menu
+4.2  Footer
+Footer Specifications
+Column 1
+Logo + tagline ('Boundless Possibilities. Limitless Growth.') + brief brand blurb
+Column 2
+Quick Links: Home, About, Services, Work, Blog, Contact
+Column 3
+Services list: Social Media, SEO, Ads, Content, Branding
+Column 4
+Contact: email, phone, social icons (Instagram, LinkedIn, YouTube, Facebook)
+Bottom Bar
+© 2025 Ameya Digital Marketing Agency | Privacy Policy | Terms
+Design
+Dark background (#111), gold top border line, white text, gold links on hover
+5. Technical Recommendations
+5.1  Platform Options
+Recommended Tech Stacks (Choose One)
+Option A — WordPress
+Best for: content updates, blog, SEO. Use Elementor Pro or custom theme. Recommended for non-technical teams.
+Option B — Webflow
+Best for: premium design control, animations, no-code. More expensive but stunning results. Recommended if budget allows.
+Option C — Next.js (Custom)
+Best for: full control, performance, custom features. Needs a developer. Future-proof and fastest.
+Our Recommendation
+Webflow for a premium feel with manageable maintenance, OR WordPress + Elementor for cost-effectiveness.
+5.2  Essential Integrations
+Google Analytics 4 — track all traffic, pages, conversions
+Google Search Console — monitor search rankings and indexing
+WhatsApp Chat Widget — instant contact for Indian market
+Meta Pixel — track Facebook/Instagram ad conversions
+Calendly — optional, for direct booking of strategy calls
+Mailchimp or Brevo — newsletter and email marketing
+Hotjar — heatmaps to see how visitors use the site
+5.3  SEO Foundations
+Each page has a unique meta title and meta description
+URL structure: /about, /services, /work, /blog, /contact
+Blog articles target keywords like: 'digital marketing agency Dehradun', 'social media management India'
+Google My Business listing linked to the website
+Schema markup for local business and services
+Site speed optimised: images compressed, lazy loading enabled
+Mobile responsive design — tested on Android and iOS
+6. Content Checklist
+Before the website can be built, you'll need to gather or create the following content. This checklist ensures no gaps during development.
+6.1  Required Content
+Content Needed Before Development
+Brand Assets
+Logo in SVG/PNG (all 3 versions), brand color codes, brand fonts
+Hero Headline
+Final tagline / main headline for the Home hero section
+About Story
+2–3 paragraphs about the founding story and mission of Ameya
+Team Photos
+Professional photos of founder(s) and any team members
+Services List
+Full list of services offered with descriptions and pricing approach
+Beatband Details
+Client logo, project summary, results / metrics achieved
+Ganga Farm Details
+Client logo, project summary, results / metrics achieved
+Testimonials
+1–3 real quotes from clients with their name and company
+Contact Info
+Business email, WhatsApp number, phone, and any physical address
+Social Links
+URLs to all active social media profiles
+Blog Topics
+5–10 article ideas to publish in first 3 months
+7. Launch Plan
+Phase 1 — Foundation (Weeks 1–2)
+Finalise all content listed in Section 6
+Choose technology platform (WordPress / Webflow / Next.js)
+Register domain if not already done (ameyadigital.in or similar)
+Set up hosting and SSL certificate
+Brief designer/developer with this document
+Phase 2 — Design & Development (Weeks 3–6)
+Home page — designed and approved first
+About + Contact pages
+Services page
+Portfolio page with Beatband + Ganga Farm case studies
+Blog setup with 2 published articles
+All integrations (Analytics, WhatsApp, Meta Pixel)
+Phase 3 — Launch & Promote (Week 7–8)
+Final QA on all pages — desktop and mobile
+Set up Google Search Console and submit sitemap
+Announce launch on Ameya's own social media
+Share with Beatband and Ganga Farm to showcase on their channels
+Begin regular blog publishing cadence
+Document Notes
+This document is the master blueprint for the Ameya Digital Marketing Agency website. Share it directly with your web designer or developer as the primary brief. All decisions — theme, pages, content, tech stack — are covered.
+As the agency grows, additional pages can be added: a Careers page, a dedicated Testimonials page, or service-specific landing pages for paid ad campaigns.
+Document Version: 1.0
+Prepared For: Ameya Digital Marketing Agency
+Date: May 2025
+Status: Ready for Developer Handoff
+AMEYA  ·  BOUNDLESS POSSIBILITIES. LIMITLESS GROWTH.
