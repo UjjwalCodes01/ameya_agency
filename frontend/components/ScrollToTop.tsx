@@ -17,6 +17,7 @@ export default function ScrollToTop() {
     <button
       onClick={scrollUp}
       aria-label="Scroll to top"
+      className="scroll-to-top"
       style={{
         position: "fixed",
         bottom: "100px",

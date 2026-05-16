@@ -100,7 +100,7 @@ export default function HeroSection() {
         </p>
 
         {/* CTA Buttons */}
-        <div style={{
+        <div className="btn-pair" style={{
           ...fade(450),
           display: "flex",
           gap: "var(--space-4)",
@@ -113,7 +113,7 @@ export default function HeroSection() {
         </div>
 
         {/* Floating Stats Badge */}
-        <div style={{
+        <div className="hero-stats" style={{
           ...fade(600),
           display: "inline-flex",
           gap: "var(--space-8)",

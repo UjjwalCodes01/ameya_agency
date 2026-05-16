@@ -123,6 +123,16 @@ function Section({ heading, children }: { heading: string; children: React.React
   );
 }
 
+function StatItem({ val, label, delay }: { val: string; label: string; delay: number }) {
+  const { ref, style } = useReveal(delay);
+  return (
+    <div ref={ref} style={style}>
+      <div style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, color: "var(--color-gold)", lineHeight: 1, marginBottom: "var(--space-2)" }}>{val}</div>
+      <div style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "var(--tracking-wider)" }}>{label}</div>
+    </div>
+  );
+}
+
 export default function CaseStudyPage({ params }: { params: { slug: string } }) {
   const cs = caseStudies[params.slug];
   if (!cs) notFound();
@@ -175,15 +185,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       <section style={{ background: "var(--color-bg-secondary)", borderBottom: "1px solid var(--color-border)" }}>
         <div className="container" style={{ padding: "clamp(40px, 5vw, 64px) var(--section-px)" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "var(--space-6)", textAlign: "center" }}>
-            {cs.stats.map((s, i) => {
-              const { ref, style } = useReveal(i * 100);
-              return (
-                <div key={s.label} ref={ref} style={style}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, color: "var(--color-gold)", lineHeight: 1, marginBottom: "var(--space-2)" }}>{s.val}</div>
-                  <div style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "var(--tracking-wider)" }}>{s.label}</div>
-                </div>
-              );
-            })}
+            {cs.stats.map((s, i) => (
+              <StatItem key={s.label} val={s.val} label={s.label} delay={i * 100} />
+            ))}
           </div>
         </div>
       </section>

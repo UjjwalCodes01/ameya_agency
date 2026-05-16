@@ -1,7 +1,64 @@
 import type { NextConfig } from "next";
 
+const securityHeaders = [
+  { key: "X-Content-Type-Options",    value: "nosniff" },
+  { key: "X-Frame-Options",           value: "SAMEORIGIN" },
+  { key: "X-XSS-Protection",          value: "1; mode=block" },
+  { key: "Referrer-Policy",           value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy",        value: "camera=(), microphone=(), geolocation=()" },
+];
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* ── Compression ──────────────────────────────────── */
+  compress: true,
+
+  /* ── Image Optimisation ───────────────────────────── */
+  images: {
+    formats: ["image/avif", "image/webp"],
+    deviceSizes: [320, 480, 640, 750, 828, 1080, 1200, 1920],
+    imageSizes:  [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 86400, // 24 hours
+  },
+
+  /* ── PoweredBy header off ─────────────────────────── */
+  poweredByHeader: false,
+
+  /* ── Security + Cache headers ─────────────────────── */
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders,
+      },
+      {
+        // Aggressive caching for static assets
+        source: "/_next/static/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        // Font caching
+        source: "/fonts/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+    ];
+  },
+
+  /* ── Redirects ─────────────────────────────────────── */
+  async redirects() {
+    return [
+      // Redirect www to non-www (configure at DNS level too)
+      {
+        source:      "/(.*)",
+        has:         [{ type: "host", value: "www.ameyadigital.in" }],
+        destination: "https://ameyadigital.in/:path*",
+        permanent:   true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
