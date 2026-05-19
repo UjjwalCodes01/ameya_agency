@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Ameya | Book a Free Strategy Call",
+  title: "Hire Digital Marketing Agency | Contact Anaya",
   description:
-    "Ready to grow your brand? Get in touch with Ameya Digital Marketing Agency. Book a free 30-minute strategy call — no pressure, just an honest plan for your brand.",
+    "Looking to hire digital marketing agency experts? Contact Anaya for a free strategy call. We are an affordable digital marketing agency focused on measurable growth.",
   openGraph: {
-    title: "Contact Ameya | Free Strategy Call",
+    title: "Contact Anaya | Free Strategy Call",
     description:
-      "Start your digital growth journey. Book a free strategy call with Ameya — reply within 24 hours, no lock-in contracts.",
-    url: "https://ameyadigital.in/contact",
+      "Start your digital growth journey. Book a free strategy call with Anaya — reply within 24 hours, no lock-in contracts.",
+    url: "https://anayadigital.in/contact",
     type: "website",
   },
-  alternates: { canonical: "https://ameyadigital.in/contact" },
+  alternates: { canonical: "https://anayadigital.in/contact" },
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {

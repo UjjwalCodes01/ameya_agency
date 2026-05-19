@@ -9,47 +9,48 @@ import Testimonials   from "@/components/home/Testimonials";
 import CTAStrip       from "@/components/home/CTAStrip";
 
 export const metadata: Metadata = {
-  title: "Ameya Digital Marketing Agency | Boundless Possibilities. Limitless Growth.",
+  title: "Anaya | Best Digital Marketing Agency in India & Dehradun",
   description:
-    "Ameya is a premium digital marketing agency in Dehradun, India. We help ambitious brands grow through social media management, SEO, paid advertising, content creation, and branding.",
+    "Anaya is a premium digital marketing agency in Dehradun, India. As a full service digital marketing agency, we help brands grow through social media management, SEO services, paid ads, and branding.",
   keywords: [
     "digital marketing agency Dehradun",
-    "social media management India",
-    "SEO agency Dehradun",
-    "Google Ads agency India",
-    "Meta Ads agency",
-    "branding agency Uttarakhand",
+    "digital marketing agency India",
+    "best digital marketing agency India",
+    "full service digital marketing agency",
+    "premium digital marketing agency",
+    "social media marketing agency",
+    "SEO agency India",
     "content marketing India",
-    "Ameya digital",
+    "Anaya digital",
   ],
   openGraph: {
-    title: "Ameya Digital Marketing Agency | Boundless Possibilities. Limitless Growth.",
+    title: "Anaya Digital Marketing Agency | Boundless Possibilities. Limitless Growth.",
     description:
       "Premium digital marketing for ambitious brands. Social media, SEO, ads, content, and branding — all under one roof.",
-    url: "https://ameyadigital.in",
+    url: "https://anayadigital.in",
     type: "website",
     locale: "en_IN",
-    siteName: "Ameya Digital Marketing Agency",
+    siteName: "Anaya Digital Marketing Agency",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ameya Digital Marketing Agency",
+    title: "Anaya Digital Marketing Agency",
     description: "Boundless Possibilities. Limitless Growth.",
   },
-  alternates: { canonical: "https://ameyadigital.in" },
+  alternates: { canonical: "https://anayadigital.in" },
 };
 
 /* ── LocalBusiness JSON-LD Structured Data ───────────── */
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://ameyadigital.in",
-  name: "Ameya Digital Marketing Agency",
+  "@id": "https://anayadigital.in",
+  name: "Anaya Digital Marketing Agency",
   description:
-    "Premium digital marketing agency in Dehradun — social media, SEO, paid ads, content creation, and branding.",
-  url: "https://ameyadigital.in",
+    "A full service digital marketing agency in Dehradun providing premium social media management, SEO services, paid ads, and brand identity design across India.",
+  url: "https://anayadigital.in",
   telephone: "+91-99999-99999",
-  email: "hello@ameyadigital.in",
+  email: "hello@anayadigital.in",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Dehradun",
@@ -72,10 +73,10 @@ const jsonLd = {
     "Analytics",
   ],
   sameAs: [
-    "https://instagram.com/ameyadigital",
-    "https://linkedin.com/company/ameyadigital",
-    "https://youtube.com/@ameyadigital",
-    "https://facebook.com/ameyadigital",
+    "https://instagram.com/anayadigital",
+    "https://linkedin.com/company/anayadigital",
+    "https://youtube.com/@anayadigital",
+    "https://facebook.com/anayadigital",
   ],
   priceRange: "₹₹",
   openingHoursSpecification: {

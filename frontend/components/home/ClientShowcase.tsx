@@ -10,9 +10,8 @@ const clients = [
     services: ["Social Media", "Content Strategy", "Branding"],
     result: "+200% Engagement",
     resultDetail: "Instagram followers tripled in 4 months",
-    accent: "from-purple to-pink",
     bgGradient: "linear-gradient(135deg, rgba(139,92,246,0.12) 0%, rgba(201,168,76,0.08) 100%)",
-    icon: "🎵",
+    num: "01",
   },
   {
     name: "Ganga Farm",
@@ -21,7 +20,7 @@ const clients = [
     result: "3× Website Traffic",
     resultDetail: "Ranked #1 on Google Maps in Dehradun",
     bgGradient: "linear-gradient(135deg, rgba(34,197,94,0.10) 0%, rgba(201,168,76,0.08) 100%)",
-    icon: "🌿",
+    num: "02",
   },
 ];
 
@@ -63,8 +62,8 @@ export default function ClientShowcase() {
                 overflow: "hidden",
               }}
             >
-              {/* Big emoji icon */}
-              <div style={{ fontSize: "3.5rem", marginBottom: "var(--space-5)", lineHeight: 1 }}>{client.icon}</div>
+              {/* Client number badge */}
+              <div style={{ fontFamily: "var(--font-display)", fontSize: "1rem", color: "var(--color-gold)", border: "1px solid var(--color-border-gold)", display: "inline-block", padding: "4px 12px", borderRadius: "var(--radius-full)", marginBottom: "var(--space-5)", letterSpacing: "var(--tracking-wider)" }}>{client.num}</div>
 
               {/* Industry tag */}
               <span className="tag" style={{ marginBottom: "var(--space-4)", display: "inline-block" }}>{client.industry}</span>

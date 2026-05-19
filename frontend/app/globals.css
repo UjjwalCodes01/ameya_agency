@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================================
-   AMEYA DIGITAL MARKETING AGENCY — DESIGN SYSTEM
+   ANAYA DIGITAL MARKETING AGENCY — DESIGN SYSTEM
    Luxury Dark Gold Theme
    All tokens defined once. Used everywhere. Never break this.
    Fonts (Cormorant Garamond + Jost) are loaded via next/font
@@ -232,7 +232,7 @@ p {
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
   padding: 14px 32px;
   cursor: pointer;
   transition: all var(--transition-base);

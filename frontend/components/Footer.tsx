@@ -34,10 +34,10 @@ const FacebookIcon = () => (
 );
 
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com/ameyadigital", icon: <InstagramIcon /> },
-  { label: "LinkedIn",  href: "https://linkedin.com/company/ameyadigital", icon: <LinkedInIcon /> },
-  { label: "YouTube",   href: "https://youtube.com/@ameyadigital", icon: <YouTubeIcon /> },
-  { label: "Facebook",  href: "https://facebook.com/ameyadigital", icon: <FacebookIcon /> },
+  { label: "Instagram", href: "https://instagram.com/anayadigital", icon: <InstagramIcon /> },
+  { label: "LinkedIn",  href: "https://linkedin.com/company/anayadigital", icon: <LinkedInIcon /> },
+  { label: "YouTube",   href: "https://youtube.com/@anayadigital", icon: <YouTubeIcon /> },
+  { label: "Facebook",  href: "https://facebook.com/anayadigital", icon: <FacebookIcon /> },
 ];
 
 const quickLinks = [
@@ -98,7 +98,7 @@ export default function Footer() {
             <Link href="/" style={{ display: "inline-block", marginBottom: "var(--space-5)" }}>
               <Image
                 src="/image.png"
-                alt="Ameya Digital Marketing Agency"
+                alt="Anaya Digital Marketing Agency"
                 width={56}
                 height={56}
                 style={{ objectFit: "contain", height: "48px", width: "auto" }}
@@ -126,7 +126,7 @@ export default function Footer() {
                 maxWidth:   "260px",
               }}
             >
-              Ameya is a premium digital marketing agency helping ambitious brands grow their online presence and drive real results.
+              Anaya is a premium digital marketing agency helping ambitious brands grow their online presence and drive real results.
             </p>
           </div>
 
@@ -210,7 +210,7 @@ export default function Footer() {
 
             {/* Email */}
             <a
-              href="mailto:hello@ameyadigital.in"
+              href="mailto:hello@anayadigital.in"
               style={{
                 ...footerLinkStyle,
                 marginBottom: "var(--space-2)",
@@ -218,7 +218,7 @@ export default function Footer() {
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold-light)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-secondary)")}
             >
-              hello@ameyadigital.in
+              hello@anayadigital.in
             </a>
 
             {/* WhatsApp */}
@@ -292,6 +292,61 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      {/* ── Team Section ────────────────────────────────── */}
+      <div
+        className="container"
+        style={{
+          paddingBottom: "clamp(40px, 5vw, 60px)",
+        }}
+      >
+        <div
+          style={{
+            background:    "linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 100%)",
+            border:        "1px solid var(--color-border-gold)",
+            borderRadius:  "var(--radius-xl)",
+            padding:       "clamp(32px, 4vw, 48px)",
+            display:       "flex",
+            alignItems:    "center",
+            justifyContent: "space-between",
+            flexWrap:      "wrap",
+            gap:           "var(--space-6)",
+          }}
+        >
+          <div>
+            <p
+              style={{
+                fontFamily:    "var(--font-body)",
+                fontSize:      "var(--text-xs)",
+                fontWeight:    600,
+                letterSpacing: "var(--tracking-widest)",
+                textTransform: "uppercase",
+                color:         "var(--color-gold)",
+                marginBottom:  "var(--space-2)",
+              }}
+            >
+              Our Leadership
+            </p>
+            <h4
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize:   "clamp(1.3rem, 2.5vw, 1.8rem)",
+                fontWeight: 600,
+                color:      "var(--color-text-primary)",
+                lineHeight: 1.2,
+              }}
+            >
+              Meet the People Behind the Work
+            </h4>
+          </div>
+          <Link
+            href="/manager"
+            className="btn btn-outline"
+            style={{ flexShrink: 0 }}
+          >
+            Meet Our Team
+          </Link>
+        </div>
+      </div>
 
       {/* Bottom bar */}
       <div
@@ -319,7 +374,7 @@ export default function Footer() {
               fontWeight: 300,
             }}
           >
-            © 2025 Ameya Digital Marketing Agency. All rights reserved.
+            © 2025 Anaya Digital Marketing Agency. All rights reserved.
           </p>
 
           <div style={{ display: "flex", gap: "var(--space-6)", flexWrap: "wrap" }}>
@@ -348,6 +403,23 @@ export default function Footer() {
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
             >
               Terms of Service
+            </Link>
+            {/* Hidden internal link — not in nav, not indexed */}
+            <Link
+              href="/manager"
+              style={{
+                fontSize:       "0.65rem",
+                color:          "rgba(255,255,255,0.2)",
+                textDecoration: "none",
+                letterSpacing:  "2px",
+                textTransform:  "uppercase",
+                fontWeight:     400,
+                transition:     "color var(--transition-fast)",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.2)")}
+            >
+              Team
             </Link>
           </div>
         </div>

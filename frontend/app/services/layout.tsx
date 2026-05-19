@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services | Social Media, SEO, Ads, Branding | Ameya Agency",
+  title: "Digital Marketing Services India | SEO, Ads, Branding | Anaya",
   description:
-    "Explore all digital marketing services offered by Ameya — Social Media Management, SEO & Local SEO, Paid Advertising (Meta & Google Ads), Content Creation, Branding, Website Design, and Analytics.",
+    "Discover Anaya's premium digital marketing services India: expert social media management services, local SEO services Dehradun, Google Ads management, and brand identity design.",
   openGraph: {
-    title: "Digital Marketing Services | Ameya Agency",
+    title: "Digital Marketing Services | Anaya Agency",
     description:
-      "From social media to SEO to branding — Ameya covers every layer of your digital presence. Custom packages for every stage of growth.",
-    url: "https://ameyadigital.in/services",
+      "From social media to SEO to branding — Anaya covers every layer of your digital presence. Custom packages for every stage of growth.",
+    url: "https://anayadigital.in/services",
     type: "website",
   },
-  alternates: { canonical: "https://ameyadigital.in/services" },
+  alternates: { canonical: "https://anayadigital.in/services" },
 };
 
 export default function ServicesLayout({ children }: { children: React.ReactNode }) {

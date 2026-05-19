@@ -40,26 +40,13 @@ function ArticleCard({ article, index, large = false }: { article: typeof articl
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          {/* Thumbnail */}
-          <div style={{
-            height: large ? "220px" : "160px",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: large ? "4.5rem" : "3.5rem",
-            background: article.accentColor,
-            position: "relative",
-          }}>
-            {article.emoji}
-            {article.featured && (
-              <div style={{ position: "absolute", top: "var(--space-4)", left: "var(--space-4)" }}>
-                <span className="tag">Featured</span>
-              </div>
-            )}
-          </div>
-
           {/* Content */}
           <div style={{ padding: large ? "var(--space-8)" : "var(--space-6)", display: "flex", flexDirection: "column", flex: 1 }}>
             {/* Meta */}
             <div style={{ display: "flex", gap: "var(--space-3)", alignItems: "center", marginBottom: "var(--space-4)", flexWrap: "wrap" }}>
+              {article.featured && (
+                <span className="tag" style={{ border: "1px solid var(--color-gold)", color: "var(--color-gold)" }}>Featured</span>
+              )}
               <span className="tag">{article.category}</span>
               <span style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)" }}>{article.date}</span>
               <span style={{ color: "var(--color-border)", fontSize: "var(--text-xs)" }}>·</span>
@@ -131,12 +118,13 @@ function NewsletterSignup() {
           Get Marketing Tips in Your Inbox
         </h3>
         <p style={{ color: "var(--color-text-secondary)", maxWidth: "400px", margin: "0 auto var(--space-8)", lineHeight: "var(--leading-relaxed)" }}>
-          One email per month. No spam. Just actionable digital marketing insights from the Ameya team.
+          One email per month. No spam. Just actionable digital marketing insights from the Anaya team.
         </p>
         {done ? (
-          <div style={{ padding: "var(--space-4) var(--space-8)", background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.25)", borderRadius: "var(--radius-full)", display: "inline-block" }}>
-            <span style={{ fontSize: "var(--text-small)", color: "#22c55e", fontWeight: 500 }}>✓ You&apos;re subscribed! Thank you.</span>
-          </div>
+          <div style={{ padding: "var(--space-4) var(--space-8)", background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.25)", borderRadius: "var(--radius-full)", display: "inline-flex", alignItems: "center", gap: "var(--space-2)" }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span style={{ fontSize: "var(--text-small)", color: "#22c55e", fontWeight: 500 }}>You&apos;re subscribed! Thank you.</span>
+            </div>
         ) : (
           <form onSubmit={(e) => { e.preventDefault(); if (email) setDone(true); }} style={{ display: "flex", gap: "var(--space-3)", maxWidth: "440px", margin: "0 auto", flexWrap: "wrap", justifyContent: "center" }}>
             <input
@@ -185,7 +173,7 @@ export default function BlogPage() {
               <span style={{ background: "linear-gradient(135deg, var(--color-gold-light), var(--color-gold))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Ideas</span>
             </h1>
             <p style={{ color: "var(--color-text-secondary)", maxWidth: "520px", margin: "0 auto", lineHeight: "var(--leading-relaxed)", fontSize: "var(--text-large)" }}>
-              Practical digital marketing advice, industry insights, and behind-the-scenes strategy from the Ameya team.
+              Practical digital marketing advice, industry insights, and behind-the-scenes strategy from the Anaya team.
             </p>
           </div>
         </div>
@@ -230,7 +218,7 @@ export default function BlogPage() {
             </div>
           ) : (
             <div style={{ textAlign: "center", padding: "var(--space-16)", color: "var(--color-text-muted)" }}>
-              <div style={{ fontSize: "2rem", marginBottom: "var(--space-4)" }}>✦</div>
+              <div style={{ width: "8px", height: "8px", background: "var(--color-gold)", margin: "0 auto var(--space-4)", borderRadius: "1px" }} />
               <p>No articles in this category yet — check back soon!</p>
             </div>
           )}

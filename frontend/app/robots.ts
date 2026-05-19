@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/admin/"],
       },
     ],
-    sitemap: "https://ameyadigital.in/sitemap.xml",
-    host: "https://ameyadigital.in",
+    sitemap: "https://anayadigital.in/sitemap.xml",
+    host: "https://anayadigital.in",
   };
 }

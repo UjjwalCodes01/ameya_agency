@@ -58,14 +58,14 @@ const pillars = [
 
 /* ── Industries ──────────────────────────────────────────── */
 const industries = [
-  { emoji: "🎵", label: "Music & Entertainment" },
-  { emoji: "🌿", label: "Agriculture & Organic" },
-  { emoji: "👗", label: "Fashion & Lifestyle" },
-  { emoji: "🍽️", label: "Food & Beverage" },
-  { emoji: "💻", label: "Technology" },
-  { emoji: "🛍️", label: "Retail & E-commerce" },
-  { emoji: "🏥", label: "Health & Wellness" },
-  { emoji: "🏗️", label: "Real Estate" },
+  { label: "Music & Entertainment" },
+  { label: "Agriculture & Organic" },
+  { label: "Fashion & Lifestyle" },
+  { label: "Food & Beverage" },
+  { label: "Technology" },
+  { label: "Retail & E-commerce" },
+  { label: "Health & Wellness" },
+  { label: "Real Estate" },
 ];
 
 /* ── Differentiators ─────────────────────────────────────── */
@@ -105,7 +105,7 @@ export default function AboutPage() {
         }} />
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div ref={heroR.ref} style={heroR.style}>
-            <span className="eyebrow" style={{ display: "block", marginBottom: "var(--space-5)" }}>About Ameya</span>
+            <span className="eyebrow" style={{ display: "block", marginBottom: "var(--space-5)" }}>About Anaya</span>
             <h1 style={{
               fontFamily: "var(--font-display)", fontSize: "var(--text-h1)", fontWeight: 600,
               lineHeight: 1.1, color: "var(--color-text-primary)", marginBottom: "var(--space-5)",
@@ -114,7 +114,7 @@ export default function AboutPage() {
               <span style={{
                 background: "linear-gradient(135deg, var(--color-gold-light), var(--color-gold))",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-              }}>Ameya</span>
+              }}>Anaya</span>
             </h1>
             <p style={{ color: "var(--color-text-secondary)", maxWidth: "560px", margin: "0 auto", lineHeight: "var(--leading-relaxed)", fontSize: "var(--text-large)" }}>
               A premium digital marketing agency from Dehradun — built to help ambitious brands grow with strategy, creativity, and relentless focus on results.
@@ -134,8 +134,8 @@ export default function AboutPage() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
               {[
-                "Ameya was founded in Dehradun with a simple but bold conviction: great digital marketing shouldn't be reserved for enterprise brands with massive budgets. Ambitious founders, growing businesses, and local legends deserve strategy that's thoughtful, creative, and actually moves the needle.",
-                "We saw an industry full of agencies that promised the world and delivered generic content. We built Ameya as the antidote — a team that treats every client's brand with the same care and precision we'd give our own. No bloated retainers, no junior staff handling your account. Just senior-level strategy and obsessive execution.",
+                "Anaya was founded in Dehradun with a simple but bold conviction: great digital marketing shouldn't be reserved for enterprise brands with massive budgets. Ambitious founders, growing businesses, and local legends deserve strategy that's thoughtful, creative, and actually moves the needle.",
+                "We saw an industry full of agencies that promised the world and delivered generic content. We built Anaya as the antidote — a team that treats every client's brand with the same care and precision we'd give our own. No bloated retainers, no junior staff handling your account. Just senior-level strategy and obsessive execution.",
                 "Today, we partner with brands across music, agriculture, fashion, tech, and more — helping them build digital presence that converts. From Dehradun to across India, and growing globally.",
               ].map((para, i) => (
                 <p key={i} style={{ fontSize: "var(--text-large)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)" }}>{para}</p>
@@ -243,7 +243,7 @@ export default function AboutPage() {
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.8rem", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "var(--space-2)" }}>
                 Founder &amp; Lead Strategist
               </h3>
-              <span className="tag" style={{ marginBottom: "var(--space-5)", display: "inline-block" }}>Ameya Digital</span>
+              <span className="tag" style={{ marginBottom: "var(--space-5)", display: "inline-block" }}>Anaya Digital</span>
               <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)" }}>
                 With deep roots in digital strategy, content creation, and brand building — our founder brings hands-on expertise to every client account. No middle layers. You work directly with the person who built the strategy.
               </p>
@@ -280,7 +280,7 @@ export default function AboutPage() {
                 transform: indR.style.transform,
                 transition: `all 0.6s ease ${i * 60 + 100}ms`,
               }}>
-                <div style={{ fontSize: "2rem", marginBottom: "var(--space-3)" }}>{ind.emoji}</div>
+                <div style={{ width: "8px", height: "8px", background: "var(--color-gold)", margin: "0 auto var(--space-3)", borderRadius: "1px" }} />
                 <div style={{ fontSize: "var(--text-xs)", color: "var(--color-text-secondary)", lineHeight: 1.4, fontWeight: 400 }}>{ind.label}</div>
               </div>
             ))}
@@ -288,7 +288,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Why Choose Ameya ─────────────────────────────── */}
+      {/* ── Why Choose Anaya ─────────────────────────────── */}
       <section className="section" style={{ background: "var(--color-bg-primary)" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "var(--space-12)", alignItems: "center" }}>
@@ -296,7 +296,7 @@ export default function AboutPage() {
             <div ref={whyR.ref} style={whyR.style}>
               <span className="eyebrow" style={{ display: "block", marginBottom: "var(--space-5)" }}>Why Us</span>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--text-h2)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2, marginBottom: "var(--space-5)" }}>
-                Why Choose <span style={{ color: "var(--color-gold)" }}>Ameya</span>
+                Why Choose <span style={{ color: "var(--color-gold)" }}>Anaya</span>
               </h2>
               <p style={{ color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", fontSize: "var(--text-large)" }}>
                 There are hundreds of agencies. Here&apos;s why the brands that care about quality choose us.
@@ -316,7 +316,7 @@ export default function AboutPage() {
                     transform: whyR.style.transform,
                     transition: `all 0.6s ease ${i * 80 + 200}ms`,
                   }}>
-                    <span style={{ color: "var(--color-gold)", flexShrink: 0, marginTop: "2px" }}>✦</span>
+                    <span style={{ display: "inline-block", width: "5px", height: "5px", background: "var(--color-gold)", flexShrink: 0, marginTop: "6px", borderRadius: "1px" }} />
                     <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)" }}>{item}</span>
                   </li>
                 ))}

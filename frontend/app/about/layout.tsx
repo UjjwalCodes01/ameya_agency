@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Ameya | Premium Digital Marketing Agency in Dehradun",
+  title: "Top Digital Marketing Agency India | About Anaya",
   description:
-    "Learn about Ameya Digital Marketing Agency — our story, mission, philosophy, and the team behind your brand's growth. Based in Dehradun, serving India & globally.",
+    "Anaya is a results driven digital marketing agency based in Dehradun. As a creative digital marketing agency, we partner with ambitious startups and small businesses to accelerate their growth.",
   openGraph: {
-    title: "About Ameya | Premium Digital Marketing Agency",
+    title: "About Anaya | Premium Digital Marketing Agency",
     description:
-      "We are Ameya — a premium digital marketing agency from Dehradun built on strategy, creativity, and relentless focus on results.",
-    url: "https://ameyadigital.in/about",
+      "We are Anaya — a premium digital marketing agency from Dehradun built on strategy, creativity, and relentless focus on results.",
+    url: "https://anayadigital.in/about",
     type: "website",
   },
-  alternates: { canonical: "https://ameyadigital.in/about" },
+  alternates: { canonical: "https://anayadigital.in/about" },
 };
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {

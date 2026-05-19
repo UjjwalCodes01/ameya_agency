@@ -15,8 +15,9 @@ const projects = [
     desc: "Transformed Beatband's social presence from zero strategy to a thriving community — consistent content, bold creative, and a brand voice that resonates with music lovers.",
     result1: { val: "200%", label: "Engagement Lift" },
     result2: { val: "3×", label: "Follower Growth" },
-    icon: "🎵",
+    num: "01",
     accent: "linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(201,168,76,0.06) 100%)",
+    thumbAccent: "rgba(139,92,246,0.2)",
     borderHover: "rgba(139,92,246,0.4)",
   },
   {
@@ -28,8 +29,9 @@ const projects = [
     desc: "Brought Ganga Farm from invisible to #1 on Google Maps in Dehradun — local SEO, GMB optimisation, and a brand identity that reflects their organic, community-first values.",
     result1: { val: "3×", label: "Website Traffic" },
     result2: { val: "#1", label: "Google Maps Rank" },
-    icon: "🌿",
+    num: "02",
     accent: "linear-gradient(135deg, rgba(34,197,94,0.12) 0%, rgba(201,168,76,0.06) 100%)",
+    thumbAccent: "rgba(34,197,94,0.2)",
     borderHover: "rgba(34,197,94,0.4)",
   },
 ];
@@ -75,12 +77,11 @@ function ProjectCard({ p, index, activeFilter }: { p: typeof projects[0]; index:
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontSize: "5rem",
-        background: "rgba(0,0,0,0.15)",
+        background: `rgba(0,0,0,0.15)`,
         position: "relative",
         overflow: "hidden",
       }}>
-        {p.icon}
+        <div style={{ fontFamily: "var(--font-display)", fontSize: "4rem", fontWeight: 600, color: p.thumbAccent, letterSpacing: "-4px", userSelect: "none" }}>{p.num}</div>
         {/* Hover overlay */}
         <div style={{
           position: "absolute", inset: 0,
@@ -161,7 +162,11 @@ function PlaceholderCard() {
       transition: "all 0.7s ease 300ms",
       background: "rgba(201,168,76,0.02)",
     }}>
-      <div style={{ fontSize: "3rem", marginBottom: "var(--space-6)" }}>✦</div>
+      <div style={{ marginBottom: "var(--space-6)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: "48px", height: "48px", border: "1px solid var(--color-border-gold)", transform: "rotate(45deg)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "8px", height: "8px", background: "var(--color-gold)", transform: "rotate(-45deg)" }} />
+        </div>
+      </div>
       <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)", fontWeight: 500, color: "var(--color-text-primary)", marginBottom: "var(--space-3)" }}>
         Your Brand Could Be Here
       </h3>

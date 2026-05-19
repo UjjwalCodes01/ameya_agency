@@ -1,5 +1,5 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬
-AMEYA
+ANAYA
 DIGITAL MARKETING AGENCY
 ─────────────────────────────────
 WEBSITE BLUEPRINT & ARCHITECTURE DOCUMENT
@@ -7,9 +7,9 @@ Boundless Possibilities. Limitless Growth.
 Prepared for internal planning and developer handoff
 Version 1.0  |  May 2025
 1. Theme & Visual Direction
-Based on your logo and branding, the recommended theme is Luxury Dark — a premium, editorial aesthetic that mirrors the gold-on-black identity of the Ameya logo. Here is the full rationale and style specification.
+Based on your logo and branding, the recommended theme is Luxury Dark — a premium, editorial aesthetic that mirrors the gold-on-black identity of the Anaya logo. Here is the full rationale and style specification.
 1.1  Recommended Theme: Luxury Dark Gold
-This is the strongest match for your brand identity. The gold metallic logo on black background immediately signals premium positioning. Your competitors in digital marketing typically use bland blue/white themes — the Luxury Dark theme will make Ameya stand out memorably.
+This is the strongest match for your brand identity. The gold metallic logo on black background immediately signals premium positioning. Your competitors in digital marketing typically use bland blue/white themes — the Luxury Dark theme will make Anaya stand out memorably.
 Theme Specification
 Theme Name
 Luxury Dark Gold
@@ -33,7 +33,7 @@ Aesthetic Tone
 Luxury / Editorial — minimal, spacious, premium
 Inspiration
 High-end consultancy, luxury fashion, premium tech agencies
-1.2  Why This Theme Works for Ameya
+1.2  Why This Theme Works for Anaya
 Your logo is gold on black — the website must be an extension of that identity
 Dark backgrounds increase perceived premium value in B2B services
 Gold accents create strong visual hierarchy — everything important pops
@@ -49,7 +49,7 @@ Music / Entertainment brand — showcase social media, content strategy, brandin
 Ganga Farm
 Agriculture / Organic brand — showcase digital presence, local SEO, awareness campaigns
 2. Website Architecture Overview
-The Ameya website is structured as a 6-page website plus legal pages. Each page has a clear purpose in the customer journey — from discovery to conversion.
+The Anaya website is structured as a 6-page website plus legal pages. Each page has a clear purpose in the customer journey — from discovery to conversion.
 2.1  Site Map
 Pages Overview
 Page 1
@@ -68,7 +68,7 @@ Legal
 Privacy Policy + Terms of Service (footer links)
 3. Page-by-Page Architecture
 3.1  Home Page (/)
-The home page is the most important page. Its job is to communicate who Ameya is, what you do, and why you're the premium choice — all within the first scroll. Every section pushes visitors toward the Contact page.
+The home page is the most important page. Its job is to communicate who Anaya is, what you do, and why you're the premium choice — all within the first scroll. Every section pushes visitors toward the Contact page.
 HOME PAGE
 First impression, brand positioning, conversion funnel entry
 Section
@@ -112,10 +112,10 @@ Section
 Content / Elements
 Purpose
 Page Hero
-Bold headline: 'We are Ameya' with short brand story intro
+Bold headline: 'We are Anaya' with short brand story intro
 Set tone and introduce brand identity
 Origin Story
-Paragraph: how and why Ameya was founded, the problem you solve
+Paragraph: how and why Anaya was founded, the problem you solve
 Human connection, brand authenticity
 Mission & Vision
 Two-column layout: Mission statement + Vision for clients
@@ -126,7 +126,7 @@ Differentiation through values
 Team Section
 Founder/team cards with photo, name, role, short bio
 Humanise the brand
-Why Choose Ameya
+Why Choose Anaya
 5–6 bullet differentiators vs generic agencies
 Overcome objections
 Industries Served
@@ -201,7 +201,7 @@ Macro social proof
 Placeholder card with a CTA to start a project — encourages new clients
 Conversion hook
 3.5  Blog / Insights Page (/blog)
-The blog builds authority and drives organic traffic via SEO. Even 1–2 posts per month on digital marketing topics will help you rank on Google and position Ameya as an expert agency.
+The blog builds authority and drives organic traffic via SEO. Even 1–2 posts per month on digital marketing topics will help you rank on Google and position Anaya as an expert agency.
 BLOG / INSIGHTS PAGE
 Thought leadership, SEO content, authority building
 Section
@@ -223,7 +223,7 @@ Article Detail Page
 Full article with: title, author, date, featured image, body, CTA at end
 Full content experience
 Suggested Topics
-10 starter blog titles for Ameya: '5 Instagram Mistakes Businesses Make', 'Why Local SEO Matters for Indian Farms', etc.
+10 starter blog titles for Anaya: '5 Instagram Mistakes Businesses Make', 'Why Local SEO Matters for Indian Farms', etc.
 Content planning seed
 Newsletter Signup
 Simple email box: 'Get marketing tips in your inbox'
@@ -263,7 +263,7 @@ Navigation Specifications
 Position
 Fixed top — stays visible while scrolling
 Logo
-Ameya logo (SVG) on left — links to Home
+Anaya logo (SVG) on left — links to Home
 Links
 Home · About · Services · Work · Blog · Contact
 CTA Button
@@ -283,7 +283,7 @@ Services list: Social Media, SEO, Ads, Content, Branding
 Column 4
 Contact: email, phone, social icons (Instagram, LinkedIn, YouTube, Facebook)
 Bottom Bar
-© 2025 Ameya Digital Marketing Agency | Privacy Policy | Terms
+© 2025 Anaya Digital Marketing Agency | Privacy Policy | Terms
 Design
 Dark background (#111), gold top border line, white text, gold links on hover
 5. Technical Recommendations
@@ -322,7 +322,7 @@ Logo in SVG/PNG (all 3 versions), brand color codes, brand fonts
 Hero Headline
 Final tagline / main headline for the Home hero section
 About Story
-2–3 paragraphs about the founding story and mission of Ameya
+2–3 paragraphs about the founding story and mission of Anaya
 Team Photos
 Professional photos of founder(s) and any team members
 Services List
@@ -343,7 +343,7 @@ Blog Topics
 Phase 1 — Foundation (Weeks 1–2)
 Finalise all content listed in Section 6
 Choose technology platform (WordPress / Webflow / Next.js)
-Register domain if not already done (ameyadigital.in or similar)
+Register domain if not already done (anayadigital.in or similar)
 Set up hosting and SSL certificate
 Brief designer/developer with this document
 Phase 2 — Design & Development (Weeks 3–6)
@@ -356,14 +356,14 @@ All integrations (Analytics, WhatsApp, Meta Pixel)
 Phase 3 — Launch & Promote (Week 7–8)
 Final QA on all pages — desktop and mobile
 Set up Google Search Console and submit sitemap
-Announce launch on Ameya's own social media
+Announce launch on Anaya's own social media
 Share with Beatband and Ganga Farm to showcase on their channels
 Begin regular blog publishing cadence
 Document Notes
-This document is the master blueprint for the Ameya Digital Marketing Agency website. Share it directly with your web designer or developer as the primary brief. All decisions — theme, pages, content, tech stack — are covered.
+This document is the master blueprint for the Anaya Digital Marketing Agency website. Share it directly with your web designer or developer as the primary brief. All decisions — theme, pages, content, tech stack — are covered.
 As the agency grows, additional pages can be added: a Careers page, a dedicated Testimonials page, or service-specific landing pages for paid ad campaigns.
 Document Version: 1.0
-Prepared For: Ameya Digital Marketing Agency
+Prepared For: Anaya Digital Marketing Agency
 Date: May 2025
 Status: Ready for Developer Handoff
-AMEYA  ·  BOUNDLESS POSSIBILITIES. LIMITLESS GROWTH.
+ANAYA  ·  BOUNDLESS POSSIBILITIES. LIMITLESS GROWTH.

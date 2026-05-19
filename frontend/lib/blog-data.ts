@@ -8,7 +8,6 @@ export type Article = {
   author: string;
   authorRole: string;
   featured: boolean;
-  emoji: string;
   accentColor: string;
   body: Section[];
 };
@@ -28,10 +27,9 @@ export const articles: Article[] = [
     category: "Social Media",
     date: "15 May 2025",
     readTime: "6 min read",
-    author: "Ameya Team",
+    author: "Anaya Team",
     authorRole: "Digital Marketing Strategists",
     featured: true,
-    emoji: "📱",
     accentColor: "rgba(139,92,246,0.10)",
     body: [
       { type: "p", content: "Instagram has over 500 million daily active users in India alone. Yet most businesses post with no strategy, no consistency, and no clear goal — then wonder why they're not growing. We see the same mistakes repeatedly across every industry. Here are the five biggest ones and exactly how to fix each." },
@@ -64,10 +62,9 @@ export const articles: Article[] = [
     category: "SEO",
     date: "1 May 2025",
     readTime: "7 min read",
-    author: "Ameya Team",
+    author: "Anaya Team",
     authorRole: "Digital Marketing Strategists",
     featured: false,
-    emoji: "🔍",
     accentColor: "rgba(34,197,94,0.08)",
     body: [
       { type: "p", content: "Every day, millions of Indians search Google for phrases like 'organic vegetables near me,' 'best café in Dehradun,' or 'digital marketing agency Pune.' These are high-intent searches — people who are ready to buy, visit, or enquire. Local SEO is how your business shows up for these searches. And most Indian businesses have no idea it exists." },
@@ -101,7 +98,7 @@ export const articles: Article[] = [
       { type: "blockquote", content: "Social media builds awareness. Local SEO captures demand that already exists. Both matter — but if you're a local business, SEO is where the money is." },
       { type: "h2", content: "Where to Start" },
       { type: "p", content: "If you do nothing else this week, claim and fully complete your Google Business Profile. Add photos, verify your address, and put a link to your review page in your WhatsApp status. These three steps alone will put you ahead of 80% of your local competitors." },
-      { type: "p", content: "For a more comprehensive strategy — keyword research, on-page SEO, backlink building, and citation management — that's exactly what we do for businesses at Ameya." },
+      { type: "p", content: "For a more comprehensive strategy — keyword research, on-page SEO, backlink building, and citation management — that's exactly what we do for businesses at Anaya." },
       { type: "cta" },
     ],
   },

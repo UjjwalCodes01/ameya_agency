@@ -31,13 +31,6 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
       {
-        // Aggressive caching for static assets
-        source: "/_next/static/(.*)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
-      {
         // Font caching
         source: "/fonts/(.*)",
         headers: [
@@ -53,8 +46,8 @@ const nextConfig: NextConfig = {
       // Redirect www to non-www (configure at DNS level too)
       {
         source:      "/(.*)",
-        has:         [{ type: "host", value: "www.ameyadigital.in" }],
-        destination: "https://ameyadigital.in/:path*",
+        has:         [{ type: "host", value: "www.anayadigital.in" }],
+        destination: "https://anayadigital.in/:path*",
         permanent:   true,
       },
     ];

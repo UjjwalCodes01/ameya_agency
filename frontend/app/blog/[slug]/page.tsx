@@ -88,8 +88,11 @@ function RenderSection({ s }: { s: Section }) {
   return null;
 }
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
-  const article = articles.find((a) => a.slug === params.slug);
+import { use } from "react";
+
+export default function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = use(params);
+  const article = articles.find((a) => a.slug === resolvedParams.slug);
   if (!article) notFound();
 
   const heroR = useReveal(0);
@@ -113,7 +116,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             </div>
 
             {/* Big emoji */}
-            <div style={{ fontSize: "4rem", marginBottom: "var(--space-6)", lineHeight: 1 }}>{article.emoji}</div>
+            <div style={{ width: "40px", height: "2px", background: "var(--color-gold)", marginBottom: "var(--space-6)", boxShadow: "0 0 12px var(--color-gold)" }} />
 
             {/* Title */}
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 4vw, 3.2rem)", fontWeight: 600, lineHeight: 1.15, color: "var(--color-text-primary)", marginBottom: "var(--space-6)" }}>
@@ -166,7 +169,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           {/* Tags */}
           <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap", marginTop: "var(--space-10)", paddingTop: "var(--space-8)", borderTop: "1px solid var(--color-border)" }}>
             <span style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "var(--tracking-wide)", marginRight: "var(--space-2)" }}>Tags:</span>
-            {[article.category, "Digital Marketing", "Ameya"].map((t) => (
+            {[article.category, "Digital Marketing", "Anaya"].map((t) => (
               <span key={t} className="tag">{t}</span>
             ))}
           </div>
@@ -178,7 +181,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <section style={{ background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", padding: "clamp(60px, 8vw, 100px) 0" }}>
           <div className="container">
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "var(--space-8)", textAlign: "center" }}>
-              More from the <span style={{ color: "var(--color-gold)" }}>Ameya Blog</span>
+              More from the <span style={{ color: "var(--color-gold)" }}>Anaya Blog</span>
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "var(--space-6)" }}>
               {relatedArticles.map((a) => (
@@ -192,7 +195,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   }}
                     onMouseEnter={(e) => { const el = e.currentTarget; el.style.borderColor = "var(--color-border-gold)"; el.style.transform = "translateY(-4px)"; }}
                     onMouseLeave={(e) => { const el = e.currentTarget; el.style.borderColor = "var(--color-border)"; el.style.transform = "none"; }}>
-                    <div style={{ height: "100px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2.5rem", background: a.accentColor }}>{a.emoji}</div>
                     <div style={{ padding: "var(--space-6)" }}>
                       <span className="tag" style={{ marginBottom: "var(--space-3)", display: "inline-block" }}>{a.category}</span>
                       <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.3, marginBottom: "var(--space-2)" }}>{a.title}</h3>

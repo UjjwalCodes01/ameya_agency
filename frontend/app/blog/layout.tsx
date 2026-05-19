@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog & Insights | Digital Marketing Tips | Ameya Agency",
+  title: "Digital Marketing Tips | Content Marketing Agency India | Anaya",
   description:
-    "Practical digital marketing advice from the Ameya team — Instagram growth, local SEO, paid ads strategy, branding tips, and real-world case study insights.",
+    "Insights from Anaya, a leading content marketing agency India. Get actionable tips from our social media strategy agency experts and local SEO agency India team.",
   openGraph: {
-    title: "Blog & Insights | Ameya Digital Marketing",
+    title: "Blog & Insights | Anaya Digital Marketing",
     description:
-      "Actionable tips on social media, SEO, branding, and paid advertising from Ameya's team of digital marketing strategists.",
-    url: "https://ameyadigital.in/blog",
+      "Actionable tips on social media, SEO, branding, and paid advertising from Anaya's team of digital marketing strategists.",
+    url: "https://anayadigital.in/blog",
     type: "website",
   },
-  alternates: { canonical: "https://ameyadigital.in/blog" },
+  alternates: { canonical: "https://anayadigital.in/blog" },
 };
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {

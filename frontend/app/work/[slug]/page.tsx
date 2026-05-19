@@ -11,7 +11,7 @@ const caseStudies: Record<string, CaseStudy> = {
     name: "Beatband",
     industry: "Music & Entertainment",
     tags: ["Social Media", "Content Strategy", "Branding"],
-    icon: "🎵",
+    num: "01",
     accent: "rgba(139,92,246,0.12)",
     taglineHero: "From zero strategy to a thriving fan community.",
     duration: "4 months",
@@ -51,7 +51,7 @@ const caseStudies: Record<string, CaseStudy> = {
     name: "Ganga Farm",
     industry: "Agriculture & Organic",
     tags: ["Local SEO", "Branding", "Awareness Campaigns"],
-    icon: "🌿",
+    num: "02",
     accent: "rgba(34,197,94,0.10)",
     taglineHero: "From invisible to #1 on Google Maps in Dehradun.",
     duration: "3 months",
@@ -90,7 +90,7 @@ const caseStudies: Record<string, CaseStudy> = {
 
 type CaseStudy = {
   slug: string; name: string; industry: string; tags: string[];
-  icon: string; accent: string; taglineHero: string;
+  num: string; accent: string; taglineHero: string;
   duration: string; year: string;
   stats: { val: string; label: string }[];
   challenge: { heading: string; body: string };
@@ -163,7 +163,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             </div>
 
             <div style={{ display: "flex", alignItems: "flex-start", gap: "var(--space-6)", flexWrap: "wrap" }}>
-              <div style={{ fontSize: "4rem", lineHeight: 1, flexShrink: 0 }}>{cs.icon}</div>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: "1rem", color: "var(--color-gold)", border: "1px solid var(--color-border-gold)", display: "inline-block", padding: "4px 14px", borderRadius: "var(--radius-full)", marginBottom: "var(--space-4)", letterSpacing: "var(--tracking-wider)" }}>{cs.num}</div>
               <div>
                 <h1 style={{ fontFamily: "var(--font-display)", fontSize: "var(--text-h1)", fontWeight: 600, lineHeight: 1.1, color: "var(--color-text-primary)", marginBottom: "var(--space-4)" }}>
                   {cs.name}
@@ -204,7 +204,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
               {cs.approach.bullets.map((b) => (
                 <li key={b} style={{ display: "flex", gap: "var(--space-3)", alignItems: "flex-start", color: "var(--color-text-secondary)", fontSize: "var(--text-base)" }}>
-                  <span style={{ color: "var(--color-gold)", flexShrink: 0, marginTop: "4px" }}>✦</span>{b}
+                  <span style={{ display: "inline-block", width: "5px", height: "5px", background: "var(--color-gold)", flexShrink: 0, marginTop: "6px", borderRadius: "1px" }} />{b}
                 </li>
               ))}
             </ul>

@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
-    quote: "Ameya completely transformed our Instagram presence. The content they create is on-brand, consistent, and our engagement has never been higher. They feel like a true extension of our team.",
+    quote: "Anaya completely transformed our Instagram presence. The content they create is on-brand, consistent, and our engagement has never been higher. They feel like a true extension of our team.",
     name: "Aryan Mehta",
     role: "Founder, Beatband",
     initials: "AM",
   },
   {
-    quote: "We went from barely being found online to ranking #1 on Google Maps in Dehradun within 3 months. The SEO work Ameya did for Ganga Farm has brought in real local customers — not just clicks.",
+    quote: "We went from barely being found online to ranking #1 on Google Maps in Dehradun within 3 months. The SEO work Anaya did for Ganga Farm has brought in real local customers — not just clicks.",
     name: "Ritu Sharma",
     role: "Owner, Ganga Farm",
     initials: "RS",
@@ -77,7 +77,7 @@ export default function Testimonials() {
               {/* Stars */}
               <div style={{ display: "flex", gap: "3px", marginBottom: "var(--space-5)" }}>
                 {[...Array(5)].map((_, si) => (
-                  <span key={si} style={{ color: "var(--color-gold)", fontSize: "1rem" }}>★</span>
+                  <svg key={si} width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="var(--color-gold)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 ))}
               </div>
 

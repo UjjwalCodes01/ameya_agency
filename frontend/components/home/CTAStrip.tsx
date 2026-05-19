@@ -105,7 +105,7 @@ export default function CTAStrip() {
         }}>
           {["Free strategy call", "Reply within 24 hours", "No lock-in contracts"].map((item) => (
             <div key={item} style={{ display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-              <span style={{ color: "var(--color-gold)", fontSize: "0.8rem" }}>✓</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               <span style={{ fontFamily: "var(--font-body)", fontSize: "var(--text-small)", color: "var(--color-text-muted)" }}>{item}</span>
             </div>
           ))}

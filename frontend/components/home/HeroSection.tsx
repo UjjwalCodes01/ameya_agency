@@ -88,15 +88,13 @@ export default function HeroSection() {
         {/* Subheadline */}
         <p style={{
           ...fade(300),
-          fontFamily: "var(--font-body)",
-          fontSize: "clamp(1rem, 2vw, 1.25rem)",
-          fontWeight: 300,
           color: "var(--color-text-secondary)",
-          maxWidth: "560px",
-          margin: "var(--space-6) auto",
+          fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
           lineHeight: "var(--leading-relaxed)",
+          maxWidth: "600px",
+          margin: "0 auto var(--space-10)",
         }}>
-          We craft bold digital strategies that turn brands into movements — social media, SEO, ads, content, and branding that actually converts.
+          We are a premium digital marketing agency providing creative digital marketing services India. We help ambitious brands scale through data-driven strategies and bold execution.
         </p>
 
         {/* CTA Buttons */}

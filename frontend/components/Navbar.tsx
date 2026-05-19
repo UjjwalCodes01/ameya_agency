@@ -72,7 +72,7 @@ export default function Navbar() {
           <Link href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
             <Image
               src="/image.png"
-              alt="Ameya Digital Marketing Agency"
+              alt="Anaya Digital Marketing Agency"
               width={48}
               height={48}
               style={{ objectFit: "contain", width: "auto", height: "42px" }}
@@ -222,14 +222,14 @@ export default function Navbar() {
           onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-gold)")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-secondary)")}
         >
-          ✕
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
 
         {/* Logo in overlay */}
         <div style={{ marginBottom: "var(--space-12)" }}>
           <Image
             src="/image.png"
-            alt="Ameya"
+            alt="Anaya"
             width={64}
             height={64}
             style={{ objectFit: "contain", height: "56px", width: "auto" }}
