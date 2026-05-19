@@ -55,7 +55,7 @@ export default function HeroSection() {
 
         {/* Eyebrow */}
         <div style={{ ...fade(0), marginBottom: "var(--space-6)" }}>
-          <span className="eyebrow">Premium Digital Marketing · Dehradun, India</span>
+          <span className="eyebrow">Premium Digital Marketing · Lucknow, India</span>
         </div>
 
         {/* Main Headline */}

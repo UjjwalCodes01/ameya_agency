@@ -99,9 +99,10 @@ export default function Footer() {
               <Image
                 src="/image.png"
                 alt="Anaya Digital Marketing Agency"
-                width={56}
-                height={56}
-                style={{ objectFit: "contain", height: "48px", width: "auto" }}
+                width={500}
+                height={500}
+                style={{ objectFit: "contain", height: "72px", width: "auto" }}
+                unoptimized={true}
               />
             </Link>
             <p
@@ -246,7 +247,7 @@ export default function Footer() {
                 marginBottom:  "var(--space-6)",
               }}
             >
-              Dehradun, Uttarakhand<br />Serving India &amp; globally
+              C-3, Sitapur Street<br />Lucknow, Uttar Pradesh 226020<br />India
             </p>
 
             {/* Social Icons */}

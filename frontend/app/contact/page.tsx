@@ -298,7 +298,7 @@ export default function ContactPage() {
                     ), label: "WhatsApp", val: "Chat with us now", href: "https://wa.me/919999999999" },
                     { icon: (
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    ), label: "Location", val: "Dehradun · Serving India & globally", href: null },
+                    ), label: "Location", val: "C-3, Sitapur Street, Lucknow 226020", href: null },
                   ].map((item) => (
                     <div key={item.label} style={{ display: "flex", alignItems: "center", gap: "var(--space-4)", padding: "var(--space-4)", background: "var(--color-bg-tertiary)", borderRadius: "var(--radius-md)", border: "1px solid var(--color-border)" }}>
                       <div style={{ flexShrink: 0, color: "var(--color-gold)" }}>{item.icon}</div>

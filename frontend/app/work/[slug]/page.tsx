@@ -2,48 +2,49 @@
 
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 
 /* ── Case Study Data ──────────────────────────────────────── */
 const caseStudies: Record<string, CaseStudy> = {
   beatband: {
     slug: "beatband",
-    name: "Beatband",
-    industry: "Music & Entertainment",
-    tags: ["Social Media", "Content Strategy", "Branding"],
+    name: "BeatBand",
+    industry: "Consumer Electronics / D2C",
+    tags: ["Brand Strategy", "Performance Ads", "Social Media"],
     num: "01",
     accent: "rgba(139,92,246,0.12)",
-    taglineHero: "From zero strategy to a thriving fan community.",
-    duration: "4 months",
+    taglineHero: "Launched India's first Bluetooth sleep headband brand from scratch.",
+    duration: "Ongoing",
     year: "2024",
     stats: [
-      { val: "+200%", label: "Engagement Rate" },
-      { val: "3×", label: "Follower Growth" },
-      { val: "18", label: "Reels Published" },
-      { val: "500K+", label: "Total Impressions" },
+      { val: "10–13h", label: "Battery Life USP" },
+      { val: "Free", label: "Shipping Across India" },
+      { val: "5★", label: "Customer Reviews" },
+      { val: "D2C", label: "Direct-to-Consumer" },
     ],
     challenge: {
       heading: "The Challenge",
-      body: "Beatband was a music entertainment brand with great talent but no digital presence. Their Instagram had sporadic posts with no strategy, minimal engagement, and a brand voice that didn't reflect their identity. They needed to attract music lovers, event organisers, and sponsors — but weren't showing up anywhere online.",
+      body: "BeatBand™ entered the market with a genuinely innovative product — a soft Bluetooth headband with ultra-thin built-in speakers, designed for sleep, workouts, and travel. But in a sea of traditional earbuds and headphones, they had zero brand recognition, no digital presence, and needed to educate the market on an entirely new product category before they could convert buyers.",
     },
     approach: {
       heading: "Our Approach",
-      body: "We started with a full brand audit and audience research — understanding who Beatband's fans were, where they spent time, and what content made them stop scrolling. From there, we developed a content strategy built around consistent Reels (performance clips, BTS, covers), a refreshed visual identity, and a community engagement playbook.",
+      body: "We built the entire brand narrative around the core pain point: earbuds hurt. Whether it's side-sleepers, gym-goers, meditators, or frequent travellers — everyone has experienced the discomfort of traditional audio. Our strategy focused on problem-aware content that made the audience feel understood before presenting BeatBand as the natural solution.",
       bullets: [
-        "Brand voice & visual identity refresh",
-        "Monthly content calendar with 20+ assets",
-        "Reels strategy: performance clips + BTS",
-        "Hashtag research & caption frameworks",
-        "Community management: DMs, comments, collabs",
+        "Full D2C brand positioning & product storytelling",
+        "Pain-point-led creative for sleep, workouts & travel audiences",
+        "UGC-style social content strategy (Reels & testimonial hooks)",
+        "Performance ad campaigns on Meta targeting Indian buyers",
+        "Shopify product page copywriting — comfort-first messaging",
+        "Review generation strategy to build social proof",
       ],
     },
     execution: {
       heading: "Execution",
-      body: "Over four months, we produced and published 18 high-quality Reels, 30+ static posts, and managed all community interactions. Every post was optimised for the algorithm — timing, hashtags, captions, and hooks. We also coordinated two artist collabs that expanded reach to new audiences.",
+      body: "We launched with a hero content series across Instagram and Facebook — each piece addressing a specific use case: sleeping on your side, running without earbuds falling out, meditating hands-free, travelling on long flights. The creative used authentic UGC-style formats that felt native to the feed. Simultaneously, our Meta ad campaigns targeted interest segments like sleep health, fitness, yoga, and frequent travellers across India, driving qualified traffic directly to the Shopify store.",
     },
     results: {
       heading: "Results",
-      body: "In four months, Beatband's Instagram engagement rate jumped 200%, follower count tripled, and their content consistently hit 20K–60K views per Reel. They now attract inbound interest from event organisers and have a content engine that runs like clockwork.",
+      body: "BeatBand rapidly accumulated verified 5-star reviews from real customers across all key use cases — sleep, workouts, meditation, and travel. The brand now ships free across India and has built a growing loyal customer base who actively share their experience online. The product's unique comfort proposition continues to drive strong word-of-mouth and organic discovery.",
     },
   },
   "ganga-farm": {
@@ -84,6 +85,47 @@ const caseStudies: Record<string, CaseStudy> = {
     results: {
       heading: "Results",
       body: "Within 3 months, Ganga Farm ranked #1 on Google Maps for key terms like 'organic farm Dehradun' and 'fresh vegetables Dehradun'. Website traffic tripled, phone calls from Google increased by 85%, and their review count went from 6 to over 46. They now have a waiting list for weekly vegetable boxes.",
+    },
+  },
+  fabricvton: {
+    slug: "fabricvton",
+    name: "FabricVTON",
+    industry: "AI / Fashion Tech (Shopify)",
+    tags: ["Brand Strategy", "Go-to-Market", "Performance Ads"],
+    num: "03",
+    accent: "rgba(14,165,233,0.10)",
+    taglineHero: "Turning browser hesitation into buyer confidence with AI try-on.",
+    duration: "Ongoing",
+    year: "2024",
+    stats: [
+      { val: "~81%", label: "Add-to-Cart Lift" },
+      { val: "~67%", label: "Conversion Increase" },
+      { val: "~25%", label: "Fewer Returns" },
+      { val: "~61s", label: "Avg. Engagement" },
+    ],
+    challenge: {
+      heading: "The Challenge",
+      body: "FabricVTON is an AI-powered virtual try-on platform built for Shopify stores — letting shoppers upload a photo and instantly see how a garment looks on them, without a physical fitting room. The product was technically impressive, but needed a compelling brand narrative and a go-to-market strategy that could cut through the noise and get Shopify merchants to trust and install a brand-new AI app.",
+    },
+    approach: {
+      heading: "Our Approach",
+      body: "We identified the core merchant pain points: high return rates, cart abandonment due to fit uncertainty, and the challenge of standing out in a crowded fashion market. Our strategy positioned FabricVTON not just as a tech tool, but as a revenue driver — framing try-on as a conversion and retention strategy, not just a gimmick.",
+      bullets: [
+        "Brand positioning: 'Turn hesitation into revenue'",
+        "Shopify merchant targeting — D2C fashion & streetwear segments",
+        "ROI-focused messaging: returns reduction + conversion uplift",
+        "Landing page narrative & feature storytelling",
+        "Social proof strategy using before/after try-on visuals",
+        "Performance ads targeting Shopify store owners",
+      ],
+    },
+    execution: {
+      heading: "Execution",
+      body: "We rebuilt the brand's messaging architecture from the ground up — leading with merchant outcomes (67% conversion lift, 25% fewer returns, 81% add-to-cart uplift) backed by real platform data. The website was restructured to guide merchants through a clear value journey: problem → solution → ROI calculator → pricing. Ad campaigns targeted Shopify merchants in fashion verticals with direct response creative that led with the headline metrics.",
+    },
+    results: {
+      heading: "Results",
+      body: "FabricVTON launched with a compelling brand presence that communicates value immediately. The platform is live on Shopify with clear pricing tiers (Starter to Enterprise), an interactive ROI calculator, and a conversion-optimised landing page. Shoppers using the virtual try-on engage for an average of 61 seconds per session — dramatically higher than standard product page engagement, validating the core premise that seeing is buying.",
     },
   },
 };
@@ -133,8 +175,9 @@ function StatItem({ val, label, delay }: { val: string; label: string; delay: nu
   );
 }
 
-export default function CaseStudyPage({ params }: { params: { slug: string } }) {
-  const cs = caseStudies[params.slug];
+export default function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params);
+  const cs = caseStudies[slug];
   if (!cs) notFound();
 
   const heroReveal = useReveal(0);

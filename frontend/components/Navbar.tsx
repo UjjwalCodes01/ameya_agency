@@ -73,9 +73,10 @@ export default function Navbar() {
             <Image
               src="/image.png"
               alt="Anaya Digital Marketing Agency"
-              width={48}
-              height={48}
-              style={{ objectFit: "contain", width: "auto", height: "42px" }}
+              width={500}
+              height={500}
+              style={{ objectFit: "contain", width: "auto", height: "64px" }}
+              unoptimized={true}
               priority
             />
           </Link>
@@ -230,9 +231,10 @@ export default function Navbar() {
           <Image
             src="/image.png"
             alt="Anaya"
-            width={64}
-            height={64}
-            style={{ objectFit: "contain", height: "56px", width: "auto" }}
+            width={500}
+            height={500}
+            style={{ objectFit: "contain", height: "80px", width: "auto" }}
+            unoptimized={true}
           />
         </div>
 

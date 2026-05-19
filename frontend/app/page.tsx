@@ -53,16 +53,17 @@ const jsonLd = {
   email: "hello@anayadigital.in",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Dehradun",
-    addressRegion: "Uttarakhand",
+    addressLocality: "Lucknow",
+    addressRegion: "Uttar Pradesh",
+    postalCode: "226020",
     addressCountry: "IN",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 30.3165,
-    longitude: 78.0322,
+    latitude: 26.8467,
+    longitude: 80.9462,
   },
-  areaServed: ["India", "Dehradun", "Uttarakhand"],
+  areaServed: ["India", "Lucknow", "Uttar Pradesh"],
   serviceType: [
     "Social Media Management",
     "Search Engine Optimisation",

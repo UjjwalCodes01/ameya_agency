@@ -5,15 +5,17 @@ import { useEffect, useRef, useState } from "react";
 
 const clients = [
   {
-    name: "Beatband",
-    industry: "Music & Entertainment",
-    services: ["Social Media", "Content Strategy", "Branding"],
-    result: "+200% Engagement",
-    resultDetail: "Instagram followers tripled in 4 months",
+    slug: "beatband",
+    name: "BeatBand™",
+    industry: "Consumer Electronics / D2C",
+    services: ["Brand Strategy", "Performance Ads", "Social Media"],
+    result: "Launched a New Product Category",
+    resultDetail: "India's first Bluetooth sleep headband — free shipping, 5★ reviews, 10–13h battery life",
     bgGradient: "linear-gradient(135deg, rgba(139,92,246,0.12) 0%, rgba(201,168,76,0.08) 100%)",
     num: "01",
   },
   {
+    slug: "ganga-farm",
     name: "Ganga Farm",
     industry: "Agriculture & Organic",
     services: ["Local SEO", "Branding", "Awareness Campaigns"],
@@ -21,6 +23,16 @@ const clients = [
     resultDetail: "Ranked #1 on Google Maps in Dehradun",
     bgGradient: "linear-gradient(135deg, rgba(34,197,94,0.10) 0%, rgba(201,168,76,0.08) 100%)",
     num: "02",
+  },
+  {
+    slug: "fabricvton",
+    name: "FabricVTON",
+    industry: "AI / Fashion Tech (Shopify)",
+    services: ["Brand Strategy", "Go-to-Market", "Performance Ads"],
+    result: "~67% Conversion Increase",
+    resultDetail: "~81% add-to-cart lift · ~25% fewer returns · 61s avg. engagement",
+    bgGradient: "linear-gradient(135deg, rgba(14,165,233,0.10) 0%, rgba(201,168,76,0.08) 100%)",
+    num: "03",
   },
 ];
 
@@ -104,7 +116,7 @@ export default function ClientShowcase() {
 
               {/* CTA */}
               <Link
-                href={`/work/${client.name.toLowerCase().replace(/\s+/g, "-")}`}
+                href={`/work/${client.slug}`}
                 style={{
                   display: "inline-flex", alignItems: "center", gap: "var(--space-2)",
                   fontSize: "var(--text-xs)", fontWeight: 600, letterSpacing: "var(--tracking-wider)",

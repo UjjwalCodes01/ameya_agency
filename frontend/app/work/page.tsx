@@ -3,22 +3,23 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const filters = ["All", "Social Media", "Branding", "SEO", "Ads"];
+const filters = ["All", "Social Media", "Branding", "SEO", "Ads", "Web"];
 
 const projects = [
   {
     slug: "beatband",
-    name: "Beatband",
-    industry: "Music & Entertainment",
-    tags: ["Social Media", "Branding"],
-    headline: "+200% Engagement in 4 Months",
-    desc: "Transformed Beatband's social presence from zero strategy to a thriving community — consistent content, bold creative, and a brand voice that resonates with music lovers.",
-    result1: { val: "200%", label: "Engagement Lift" },
-    result2: { val: "3×", label: "Follower Growth" },
+    name: "BeatBand",
+    industry: "Consumer Electronics / D2C",
+    tags: ["Social Media", "Ads", "Branding"],
+    headline: "Launched India's First Bluetooth Sleep Headband Brand",
+    desc: "BeatBand™ is a premium Bluetooth headband designed for sleep, workouts & travel — ultra-thin speakers, soft breathable fabric, and up to 13 hours of battery life. We built the brand's digital presence end-to-end: product storytelling, social content, and performance ads that turned early adopters into a loyal community.",
+    result1: { val: "10–13h", label: "Battery Life USP" },
+    result2: { val: "Free", label: "Shipping Across India" },
     num: "01",
     accent: "linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(201,168,76,0.06) 100%)",
     thumbAccent: "rgba(139,92,246,0.2)",
     borderHover: "rgba(139,92,246,0.4)",
+    url: "https://beatband.in/",
   },
   {
     slug: "ganga-farm",
@@ -33,6 +34,22 @@ const projects = [
     accent: "linear-gradient(135deg, rgba(34,197,94,0.12) 0%, rgba(201,168,76,0.06) 100%)",
     thumbAccent: "rgba(34,197,94,0.2)",
     borderHover: "rgba(34,197,94,0.4)",
+    url: null,
+  },
+  {
+    slug: "fabricvton",
+    name: "FabricVTON",
+    industry: "AI / Fashion Tech (Shopify)",
+    tags: ["Web", "Branding", "Ads"],
+    headline: "+81% Lift in Add-to-Cart with AI Try-On",
+    desc: "FabricVTON is an AI-powered virtual try-on platform built for Shopify stores. We crafted its digital brand, go-to-market positioning, and ad strategy — helping fashion merchants reduce return rates by ~25%, boost conversions by ~67%, and drive 61-second average engagement sessions on product pages.",
+    result1: { val: "~67%", label: "Conversion Increase" },
+    result2: { val: "~25%", label: "Fewer Returns" },
+    num: "03",
+    accent: "linear-gradient(135deg, rgba(14,165,233,0.12) 0%, rgba(201,168,76,0.06) 100%)",
+    thumbAccent: "rgba(14,165,233,0.2)",
+    borderHover: "rgba(14,165,233,0.4)",
+    url: "https://www.fabricvton.com/",
   },
 ];
 
@@ -139,9 +156,16 @@ function ProjectCard({ p, index, activeFilter }: { p: typeof projects[0]; index:
         </div>
 
         {/* CTA */}
-        <Link href={`/work/${p.slug}`} className="btn btn-outline btn-sm">
-          View Case Study →
-        </Link>
+        <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
+          <Link href={`/work/${p.slug}`} className="btn btn-outline btn-sm">
+            View Case Study →
+          </Link>
+          {p.url && (
+            <a href={p.url} target="_blank" rel="noopener noreferrer" className="btn btn-sm" style={{ background: "transparent", border: "1px solid var(--color-border)", color: "var(--color-text-muted)", borderRadius: "var(--radius-full)" }}>
+              Visit Live Site ↗
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
