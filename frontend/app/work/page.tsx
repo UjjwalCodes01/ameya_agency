@@ -20,6 +20,7 @@ const projects = [
     thumbAccent: "rgba(139,92,246,0.2)",
     borderHover: "rgba(139,92,246,0.4)",
     url: "https://beatband.in/",
+    logoText: "BEATBAND",
   },
   {
     slug: "ganga-farm",
@@ -35,6 +36,7 @@ const projects = [
     thumbAccent: "rgba(34,197,94,0.2)",
     borderHover: "rgba(34,197,94,0.4)",
     url: null,
+    logoText: "GANGA FARM",
   },
   {
     slug: "fabricvton",
@@ -50,6 +52,7 @@ const projects = [
     thumbAccent: "rgba(14,165,233,0.2)",
     borderHover: "rgba(14,165,233,0.4)",
     url: "https://www.fabricvton.com/",
+    logoText: "FABRICVTON",
   },
 ];
 
@@ -98,7 +101,22 @@ function ProjectCard({ p, index, activeFilter }: { p: typeof projects[0]; index:
         position: "relative",
         overflow: "hidden",
       }}>
-        <div style={{ fontFamily: "var(--font-display)", fontSize: "4rem", fontWeight: 600, color: p.thumbAccent, letterSpacing: "-4px", userSelect: "none" }}>{p.num}</div>
+        {/* Watermark Logo */}
+        <div style={{
+          position: "absolute",
+          fontFamily: "var(--font-display)",
+          fontSize: "clamp(4rem, 10vw, 6rem)",
+          fontWeight: 700,
+          color: "var(--color-text-primary)",
+          opacity: 0.04,
+          whiteSpace: "nowrap",
+          transform: "rotate(-5deg)",
+          userSelect: "none",
+          pointerEvents: "none",
+        }}>
+          {p.logoText}
+        </div>
+        <div style={{ position: "relative", zIndex: 1, fontFamily: "var(--font-display)", fontSize: "4rem", fontWeight: 600, color: p.thumbAccent, letterSpacing: "-4px", userSelect: "none" }}>{p.num}</div>
         {/* Hover overlay */}
         <div style={{
           position: "absolute", inset: 0,

@@ -13,6 +13,7 @@ const clients = [
     resultDetail: "India's first Bluetooth sleep headband — free shipping, 5★ reviews, 10–13h battery life",
     bgGradient: "linear-gradient(135deg, rgba(139,92,246,0.12) 0%, rgba(201,168,76,0.08) 100%)",
     num: "01",
+    logoText: "BEATBAND",
   },
   {
     slug: "ganga-farm",
@@ -23,6 +24,7 @@ const clients = [
     resultDetail: "Ranked #1 on Google Maps in Lucknow",
     bgGradient: "linear-gradient(135deg, rgba(34,197,94,0.10) 0%, rgba(201,168,76,0.08) 100%)",
     num: "02",
+    logoText: "GANGA FARM",
   },
   {
     slug: "fabricvton",
@@ -33,6 +35,7 @@ const clients = [
     resultDetail: "~81% add-to-cart lift · ~25% fewer returns · 61s avg. engagement",
     bgGradient: "linear-gradient(135deg, rgba(14,165,233,0.10) 0%, rgba(201,168,76,0.08) 100%)",
     num: "03",
+    logoText: "FABRICVTON",
   },
 ];
 
@@ -74,14 +77,34 @@ export default function ClientShowcase() {
                 overflow: "hidden",
               }}
             >
+              {/* Watermark Logo */}
+              <div style={{
+                position: "absolute",
+                top: "10%",
+                right: "-5%",
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(5rem, 8vw, 7rem)",
+                fontWeight: 700,
+                color: "var(--color-text-primary)",
+                opacity: 0.03,
+                whiteSpace: "nowrap",
+                transform: "rotate(-5deg)",
+                userSelect: "none",
+                pointerEvents: "none",
+                zIndex: 0,
+              }}>
+                {client.logoText}
+              </div>
+
               {/* Client number badge */}
-              <div style={{ fontFamily: "var(--font-display)", fontSize: "1rem", color: "var(--color-gold)", border: "1px solid var(--color-border-gold)", display: "inline-block", padding: "4px 12px", borderRadius: "var(--radius-full)", marginBottom: "var(--space-5)", letterSpacing: "var(--tracking-wider)" }}>{client.num}</div>
+              <div style={{ position: "relative", zIndex: 1, fontFamily: "var(--font-display)", fontSize: "1rem", color: "var(--color-gold)", border: "1px solid var(--color-border-gold)", display: "inline-block", padding: "4px 12px", borderRadius: "var(--radius-full)", marginBottom: "var(--space-5)", letterSpacing: "var(--tracking-wider)" }}>{client.num}</div>
 
               {/* Industry tag */}
-              <span className="tag" style={{ marginBottom: "var(--space-4)", display: "inline-block" }}>{client.industry}</span>
+              <span className="tag" style={{ position: "relative", zIndex: 1, marginBottom: "var(--space-4)", display: "inline-block" }}>{client.industry}</span>
 
               {/* Name */}
               <h3 style={{
+                position: "relative", zIndex: 1,
                 fontFamily: "var(--font-display)",
                 fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
                 fontWeight: 600,
@@ -92,7 +115,7 @@ export default function ClientShowcase() {
               </h3>
 
               {/* Services tags */}
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-2)", marginBottom: "var(--space-6)" }}>
+              <div style={{ position: "relative", zIndex: 1, display: "flex", flexWrap: "wrap", gap: "var(--space-2)", marginBottom: "var(--space-6)" }}>
                 {client.services.map((s) => (
                   <span key={s} style={{
                     fontSize: "var(--text-xs)", fontWeight: 400, color: "var(--color-text-muted)",
@@ -104,6 +127,7 @@ export default function ClientShowcase() {
 
               {/* Result */}
               <div style={{
+                position: "relative", zIndex: 1,
                 borderTop: "1px solid var(--color-border-gold)",
                 paddingTop: "var(--space-5)",
                 marginBottom: "var(--space-6)",
@@ -118,6 +142,7 @@ export default function ClientShowcase() {
               <Link
                 href={`/work/${client.slug}`}
                 style={{
+                  position: "relative", zIndex: 1,
                   display: "inline-flex", alignItems: "center", gap: "var(--space-2)",
                   fontSize: "var(--text-xs)", fontWeight: 600, letterSpacing: "var(--tracking-wider)",
                   textTransform: "uppercase", color: "var(--color-gold)", textDecoration: "none",
