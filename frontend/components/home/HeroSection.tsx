@@ -124,10 +124,9 @@ export default function HeroSection() {
           backdropFilter: "blur(10px)",
         }}>
           {[
-            { num: "30+", label: "Clients Served" },
-            { num: "150+", label: "Campaigns Run" },
-            { num: "8+", label: "Industries" },
-            { num: "3+", label: "Years Experience" },
+            { num: "3+", label: "Clients Served" },
+            { num: "10+", label: "Campaigns Run" },
+            { num: "3+", label: "Industries" },
           ].map((s) => (
             <div key={s.label} style={{ textAlign: "center" }}>
               <div style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 600, color: "var(--color-gold)" }}>{s.num}</div>
