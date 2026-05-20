@@ -117,7 +117,7 @@ export default function AboutPage() {
               }}>Anaya</span>
             </h1>
             <p style={{ color: "var(--color-text-secondary)", maxWidth: "560px", margin: "0 auto", lineHeight: "var(--leading-relaxed)", fontSize: "var(--text-large)" }}>
-              A premium digital marketing agency from Lucknow — built to help ambitious brands grow with strategy, creativity, and relentless focus on results.
+              A digital marketing agency from Lucknow — built to help ambitious brands grow with strategy, creativity, and relentless focus on results.
             </p>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function AboutPage() {
             <span className="eyebrow" style={{ display: "block", marginBottom: "var(--space-5)" }}>Our Story</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--text-h2)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "var(--space-8)", lineHeight: 1.2 }}>
               Built from a belief that every brand deserves{" "}
-              <em style={{ color: "var(--color-gold)" }}>premium marketing.</em>
+              <em style={{ color: "var(--color-gold)" }}>empire-building marketing.</em>
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
               {[
@@ -153,7 +153,7 @@ export default function AboutPage() {
               {
                 label: "Our Mission",
                 icon: "◎",
-                text: "To make premium digital marketing accessible to every ambitious brand — delivering strategy, creativity, and measurable results that drive real growth, not just likes.",
+                text: "To make empire-building digital marketing accessible to every ambitious brand — delivering strategy, creativity, and measurable results that drive real growth, not just likes.",
               },
               {
                 label: "Our Vision",

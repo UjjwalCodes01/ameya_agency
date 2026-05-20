@@ -12,7 +12,7 @@ const projects = [
     industry: "Consumer Electronics / D2C",
     tags: ["Social Media", "Ads", "Branding"],
     headline: "Launched India's First Bluetooth Sleep Headband Brand",
-    desc: "BeatBand™ is a premium Bluetooth headband designed for sleep, workouts & travel — ultra-thin speakers, soft breathable fabric, and up to 13 hours of battery life. We built the brand's digital presence end-to-end: product storytelling, social content, and performance ads that turned early adopters into a loyal community.",
+    desc: "BeatBand™ is a high-quality Bluetooth headband designed for sleep, workouts & travel — ultra-thin speakers, soft breathable fabric, and up to 13 hours of battery life. We built the brand's digital presence end-to-end: product storytelling, social content, and performance ads that turned early adopters into a loyal community.",
     result1: { val: "10–13h", label: "Battery Life USP" },
     result2: { val: "Free", label: "Shipping Across India" },
     num: "01",

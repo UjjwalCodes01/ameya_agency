@@ -11,13 +11,13 @@ import CTAStrip       from "@/components/home/CTAStrip";
 export const metadata: Metadata = {
   title: "Anaya | Best Digital Marketing Agency in India & Lucknow",
   description:
-    "Anaya is a premium digital marketing agency in Lucknow, India. As a full service digital marketing agency, we help brands grow through social media management, SEO services, paid ads, and branding.",
+    "Anaya is a digital marketing agency in Lucknow, India. As a full service digital marketing agency, we help brands grow through social media management, SEO services, paid ads, and branding.",
   keywords: [
     "digital marketing agency Lucknow",
     "digital marketing agency India",
     "best digital marketing agency India",
     "full service digital marketing agency",
-    "premium digital marketing agency",
+    "digital marketing agency",
     "social media marketing agency",
     "SEO agency India",
     "content marketing India",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Anaya Digital Marketing Agency | Boundless Possibilities. Limitless Growth.",
     description:
-      "Premium digital marketing for ambitious brands. Social media, SEO, ads, content, and branding — all under one roof.",
+      "Digital marketing for ambitious brands. Social media, SEO, ads, content, and branding — all under one roof.",
     url: "https://anayadigital.in",
     type: "website",
     locale: "en_IN",
@@ -47,7 +47,7 @@ const jsonLd = {
   "@id": "https://anayadigital.in",
   name: "Anaya Digital Marketing Agency",
   description:
-    "A full service digital marketing agency in Lucknow providing premium social media management, SEO services, paid ads, and brand identity design across India.",
+    "A full service digital marketing agency in Lucknow providing expert social media management, SEO services, paid ads, and brand identity design across India.",
   url: "https://anayadigital.in",
   telephone: "+91-99999-99999",
   email: "hello@anayadigital.in",

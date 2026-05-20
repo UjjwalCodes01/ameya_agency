@@ -55,7 +55,7 @@ export default function HeroSection() {
 
         {/* Eyebrow */}
         <div style={{ ...fade(0), marginBottom: "var(--space-6)" }}>
-          <span className="eyebrow">Premium Digital Marketing · Lucknow, India</span>
+          <span className="eyebrow">Building Empires · Lucknow, India</span>
         </div>
 
         {/* Main Headline */}
@@ -94,7 +94,7 @@ export default function HeroSection() {
           maxWidth: "600px",
           margin: "0 auto var(--space-10)",
         }}>
-          We are a premium digital marketing agency providing creative digital marketing services India. We help ambitious brands scale through data-driven strategies and bold execution.
+          We are an empire-building digital marketing agency providing creative digital marketing services India. We help ambitious brands scale through data-driven strategies and bold execution.
         </p>
 
         {/* CTA Buttons */}

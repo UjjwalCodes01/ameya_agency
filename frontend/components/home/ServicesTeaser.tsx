@@ -44,7 +44,7 @@ const services = [
       </svg>
     ),
     title: "Branding",
-    desc: "Logo, visual identity, brand kit, tone of voice — everything you need to look premium and stay consistent across every touchpoint.",
+    desc: "Logo, visual identity, brand kit, tone of voice — everything you need to build your empire and stay consistent across every touchpoint.",
     tag: "Identity",
     href: "/services#branding",
   },

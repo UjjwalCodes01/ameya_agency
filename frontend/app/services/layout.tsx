@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Digital Marketing Services India | SEO, Ads, Branding | Anaya",
   description:
-    "Discover Anaya's premium digital marketing services India: expert social media management services, local SEO services Lucknow, Google Ads management, and brand identity design.",
+    "Discover Anaya's digital marketing services India: expert social media management services, local SEO services Lucknow, Google Ads management, and brand identity design.",
   openGraph: {
     title: "Digital Marketing Services | Anaya Agency",
     description:

@@ -127,7 +127,7 @@ export default function Footer() {
                 maxWidth:   "260px",
               }}
             >
-              Anaya is a premium digital marketing agency helping ambitious brands grow their online presence and drive real results.
+              Anaya is a digital marketing agency helping ambitious brands grow their online presence and drive real results.
             </p>
           </div>
 

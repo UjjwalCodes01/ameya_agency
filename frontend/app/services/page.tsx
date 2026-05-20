@@ -65,7 +65,7 @@ const services = [
     icon: "content",
     title: "Content Creation",
     tagline: "Content that stops the scroll",
-    desc: "From Reels and short-form videos to graphics, carousels, and brand photography direction — we produce content that reflects your brand's premium positioning and drives real engagement.",
+    desc: "From Reels and short-form videos to graphics, carousels, and brand photography direction — we produce content that reflects your brand's unique positioning and drives real engagement.",
     tags: ["Reels", "Graphics", "Copywriting", "Video Editing", "Photography Direction"],
     features: [
       "Short-form video (Reels, YouTube Shorts)",
@@ -112,7 +112,7 @@ const services = [
     id: "branding",
     icon: "branding",
     title: "Branding & Identity",
-    tagline: "Look premium. Be remembered.",
+    tagline: "Build your empire. Be remembered.",
     desc: "We craft complete visual identities — logo design, brand kits, colour palettes, typography, tone of voice, and brand guidelines. Everything you need to show up consistently and confidently across every touchpoint.",
     tags: ["Logo Design", "Brand Kit", "Visual Identity", "Tone of Voice", "Brand Guidelines"],
     features: [
