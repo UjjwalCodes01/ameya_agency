@@ -73,7 +73,7 @@ const whyUs = [
   "Strategy before execution — no random posting, ever",
   "Transparent reporting — you see exactly what's working",
   "Senior-level attention on every account, not interns",
-  "Dehradun-based with deep understanding of Indian markets",
+  "Lucknow-based with deep understanding of Indian markets",
   "Built for long-term growth, not short-term vanity metrics",
   "We only take on clients we know we can deliver results for",
 ];
@@ -117,7 +117,7 @@ export default function AboutPage() {
               }}>Anaya</span>
             </h1>
             <p style={{ color: "var(--color-text-secondary)", maxWidth: "560px", margin: "0 auto", lineHeight: "var(--leading-relaxed)", fontSize: "var(--text-large)" }}>
-              A premium digital marketing agency from Dehradun — built to help ambitious brands grow with strategy, creativity, and relentless focus on results.
+              A premium digital marketing agency from Lucknow — built to help ambitious brands grow with strategy, creativity, and relentless focus on results.
             </p>
           </div>
         </div>
@@ -134,9 +134,9 @@ export default function AboutPage() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
               {[
-                "Anaya was founded in Dehradun with a simple but bold conviction: great digital marketing shouldn't be reserved for enterprise brands with massive budgets. Ambitious founders, growing businesses, and local legends deserve strategy that's thoughtful, creative, and actually moves the needle.",
+                "Anaya was founded in Lucknow with a simple but bold conviction: great digital marketing shouldn't be reserved for enterprise brands with massive budgets. Ambitious founders, growing businesses, and local legends deserve strategy that's thoughtful, creative, and actually moves the needle.",
                 "We saw an industry full of agencies that promised the world and delivered generic content. We built Anaya as the antidote — a team that treats every client's brand with the same care and precision we'd give our own. No bloated retainers, no junior staff handling your account. Just senior-level strategy and obsessive execution.",
-                "Today, we partner with brands across music, agriculture, fashion, tech, and more — helping them build digital presence that converts. From Dehradun to across India, and growing globally.",
+                "Today, we partner with brands across music, agriculture, fashion, tech, and more — helping them build digital presence that converts. From Lucknow to across India, and growing globally.",
               ].map((para, i) => (
                 <p key={i} style={{ fontSize: "var(--text-large)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)" }}>{para}</p>
               ))}
@@ -215,48 +215,152 @@ export default function AboutPage() {
             <h2>The People Behind <span style={{ color: "var(--color-gold)" }}>Your Growth</span></h2>
             <p>Small by design. Senior by standard. Passionate by nature.</p>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{
-              background: "var(--color-bg-tertiary)",
-              border: "1px solid var(--color-border-gold)",
-              borderRadius: "var(--radius-xl)",
-              padding: "clamp(40px, 5vw, 60px)",
-              maxWidth: "480px",
-              width: "100%",
-              textAlign: "center",
-              opacity: teamR.style.opacity,
-              transform: teamR.style.transform,
-              transition: "all 0.7s ease 200ms",
-            }}>
-              {/* Avatar */}
-              <div style={{
-                width: "96px", height: "96px", borderRadius: "50%",
-                background: "linear-gradient(135deg, var(--color-gold-dark), var(--color-gold-light))",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                margin: "0 auto var(--space-6)",
-                fontSize: "2.2rem", fontWeight: 700, color: "#0A0A0A",
-                fontFamily: "var(--font-display)",
-                border: "2px solid var(--color-gold)",
-              }}>
-                A
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "var(--space-6)", marginTop: "var(--space-4)" }}>
+            {[
+              {
+                initials: "T",
+                name: "Tejasvi",
+                title: "Co-Founder & Strategy Lead",
+                bio: "Great marketing starts with knowing what not to do.",
+                detail: "Leads strategy and client relations with a focus on measurable growth and brand excellence.",
+                linkedin: "https://linkedin.com/in/tejasvi",
+              },
+              {
+                initials: "AS",
+                name: "Aaditya Singh",
+                title: "Co-Founder & Performance Marketing",
+                bio: "Every rupee spent should work harder than the last.",
+                detail: "Oversees campaign execution and performance marketing operations across all client accounts.",
+                linkedin: "https://linkedin.com/in/aadityasingh",
+              },
+              {
+                initials: "AS",
+                name: "Aaditya Singhal",
+                title: "Co-Founder & Content & Creative",
+                bio: "Content without strategy is just noise.",
+                detail: "Drives content strategy and creative direction ensuring every piece of content serves the brand.",
+                linkedin: "https://linkedin.com/in/aadityasinghal",
+              },
+              {
+                initials: "UT",
+                name: "Ujjwal Tyagi",
+                title: "Co-Founder & Paid Media",
+                bio: "Data tells you where to go. Intuition tells you how fast.",
+                detail: "Manages digital advertising and paid media campaigns delivering consistent ROI for clients.",
+                linkedin: "https://linkedin.com/in/ujjwaltyagi",
+              },
+              {
+                initials: "RR",
+                name: "Rudra Veer Singh Rathore",
+                title: "Co-Founder & SEO & Organic Growth",
+                bio: "Organic growth is the only kind that compounds.",
+                detail: "Leads SEO and organic growth initiatives building long-term digital presence for every client.",
+                linkedin: "https://linkedin.com/in/rudraveersinghrathore",
+              },
+            ].map((member, i) => (
+              <div
+                key={member.name}
+                style={{
+                  background: "var(--color-bg-tertiary)",
+                  border: "1px solid var(--color-border-gold)",
+                  borderRadius: "var(--radius-xl)",
+                  padding: "clamp(32px, 4vw, 44px)",
+                  textAlign: "center",
+                  opacity: teamR.style.opacity,
+                  transform: teamR.style.transform,
+                  transition: `all 0.7s ease ${i * 100 + 100}ms`,
+                }}
+              >
+                {/* Avatar */}
+                <div style={{
+                  width: "80px", height: "80px", borderRadius: "50%",
+                  background: "linear-gradient(135deg, var(--color-gold-dark), var(--color-gold-light))",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  margin: "0 auto var(--space-5)",
+                  fontSize: "1.5rem", fontWeight: 700, color: "#0A0A0A",
+                  fontFamily: "var(--font-display)",
+                  border: "2px solid var(--color-gold)",
+                  letterSpacing: "1px",
+                }}>
+                  {member.initials}
+                </div>
+
+                {/* Name */}
+                <h3 style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "1.4rem",
+                  fontWeight: 600,
+                  color: "var(--color-text-primary)",
+                  marginBottom: "var(--space-1)",
+                  lineHeight: 1.2,
+                }}>
+                  {member.name}
+                </h3>
+
+                {/* Title */}
+                <p style={{
+                  fontSize: "var(--text-xs)",
+                  color: "var(--color-gold)",
+                  textTransform: "uppercase",
+                  letterSpacing: "var(--tracking-wider)",
+                  marginBottom: "var(--space-4)",
+                  fontWeight: 500,
+                }}>
+                  {member.title}
+                </p>
+
+                {/* Quote */}
+                <p style={{
+                  fontFamily: "var(--font-display)",
+                  fontStyle: "italic",
+                  fontSize: "var(--text-base)",
+                  color: "var(--color-text-secondary)",
+                  lineHeight: "var(--leading-relaxed)",
+                  marginBottom: "var(--space-4)",
+                  borderLeft: "2px solid var(--color-gold)",
+                  paddingLeft: "var(--space-4)",
+                  textAlign: "left",
+                }}>
+                  &ldquo;{member.bio}&rdquo;
+                </p>
+
+                {/* Detail */}
+                <p style={{
+                  fontSize: "var(--text-small)",
+                  color: "var(--color-text-muted)",
+                  lineHeight: "var(--leading-relaxed)",
+                  marginBottom: "var(--space-5)",
+                }}>
+                  {member.detail}
+                </p>
+
+                {/* LinkedIn */}
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "var(--space-2)",
+                    fontSize: "var(--text-xs)",
+                    color: "var(--color-gold)",
+                    textDecoration: "none",
+                    border: "1px solid var(--color-border-gold)",
+                    borderRadius: "var(--radius-full)",
+                    padding: "6px 16px",
+                    fontWeight: 500,
+                    letterSpacing: "var(--tracking-wide)",
+                    transition: "all var(--transition-fast)",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-gold-muted)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  LinkedIn
+                </a>
               </div>
-              <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.8rem", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "var(--space-2)" }}>
-                Founder &amp; Lead Strategist
-              </h3>
-              <span className="tag" style={{ marginBottom: "var(--space-5)", display: "inline-block" }}>Anaya Digital</span>
-              <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)" }}>
-                With deep roots in digital strategy, content creation, and brand building — our founder brings hands-on expertise to every client account. No middle layers. You work directly with the person who built the strategy.
-              </p>
-              <div style={{ marginTop: "var(--space-6)", paddingTop: "var(--space-5)", borderTop: "1px solid var(--color-border)", display: "flex", justifyContent: "center", gap: "var(--space-8)" }}>
-                {[{ val: "3+", label: "Years" }, { val: "30+", label: "Clients" }, { val: "150+", label: "Campaigns" }].map((s) => (
-                  <div key={s.label} style={{ textAlign: "center" }}>
-                    <div style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 600, color: "var(--color-gold)" }}>{s.val}</div>
-                    <div style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "var(--tracking-wide)" }}>{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+            ))}
         </div>
       </section>
 

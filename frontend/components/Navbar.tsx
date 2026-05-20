@@ -8,9 +8,10 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { label: "Home",     href: "/" },
   { label: "About",    href: "/about" },
+  { label: "Team",     href: "/manager" },
   { label: "Services", href: "/services" },
   { label: "Work",     href: "/work" },
-  { label: "Blog",     href: "/blog" },
+  // Blog hidden until 6+ posts are ready
   { label: "Contact",  href: "/contact" },
 ];
 

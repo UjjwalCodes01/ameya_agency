@@ -24,22 +24,22 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Anaya Digital Marketing Agency | Best Digital Marketing Agency India & Dehradun",
+  title: "Anaya Digital Marketing Agency | Best Digital Marketing Agency India & Lucknow",
   description:
-    "Anaya is a premium digital marketing agency based in Dehradun, India. We specialise in social media management, SEO services, Google Ads, paid advertising, content creation, and branding for ambitious brands across India.",
+    "Anaya is a premium digital marketing agency based in Lucknow, India. We specialise in social media management, SEO services, Google Ads, paid advertising, content creation, and branding for ambitious brands across India.",
   keywords: [
-    "digital marketing agency Dehradun",
+    "digital marketing agency Lucknow",
     "best digital marketing agency India",
     "full service digital marketing agency",
     "social media management India",
     "SEO agency India",
     "Google Ads agency India",
     "content marketing India",
-    "branding agency Dehradun",
+    "branding agency Lucknow",
     "Anaya digital marketing",
   ],
   openGraph: {
-    title: "Anaya | Best Digital Marketing Agency India & Dehradun",
+    title: "Anaya | Best Digital Marketing Agency India & Lucknow",
     description: "Premium digital marketing agency — social media, SEO, ads, content, and branding that delivers real results.",
     type: "website",
     locale: "en_IN",

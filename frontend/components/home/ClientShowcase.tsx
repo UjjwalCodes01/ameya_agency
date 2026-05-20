@@ -20,7 +20,7 @@ const clients = [
     industry: "Agriculture & Organic",
     services: ["Local SEO", "Branding", "Awareness Campaigns"],
     result: "3× Website Traffic",
-    resultDetail: "Ranked #1 on Google Maps in Dehradun",
+    resultDetail: "Ranked #1 on Google Maps in Lucknow",
     bgGradient: "linear-gradient(135deg, rgba(34,197,94,0.10) 0%, rgba(201,168,76,0.08) 100%)",
     num: "02",
   },

@@ -263,48 +263,65 @@ function ServiceCard({ s, index }: { s: typeof services[0]; index: number }) {
   );
 }
 
-/* ── Pricing Teaser ───────────────────────────────────────── */
-function PricingTeaser() {
+/* ── Custom Pricing CTA (replaces old pricing tiers) ─────────── */
+function CustomPricingCTA() {
   const { ref, visible } = useReveal();
   return (
     <div ref={ref} style={{
       background: "var(--color-bg-secondary)",
       border: "1px solid var(--color-border-gold)",
       borderRadius: "var(--radius-xl)",
-      padding: "clamp(40px, 5vw, 64px)",
+      padding: "clamp(48px, 6vw, 80px)",
       textAlign: "center",
       marginTop: "var(--space-12)",
+      position: "relative",
+      overflow: "hidden",
       opacity: visible ? 1 : 0,
       transform: visible ? "none" : "translateY(30px)",
       transition: "all 0.7s ease",
     }}>
-      <span className="eyebrow" style={{ display: "block", marginBottom: "var(--space-4)" }}>Pricing</span>
-      <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "var(--space-4)" }}>
-        Custom Packages for <span style={{ color: "var(--color-gold)" }}>Every Stage</span>
-      </h2>
-      <p style={{ color: "var(--color-text-secondary)", maxWidth: "500px", margin: "0 auto var(--space-8)", lineHeight: "var(--leading-relaxed)" }}>
-        Whether you&apos;re just starting out or ready to scale, we build a package around your goals and budget. No bloated retainers — only what you actually need.
-      </p>
-      <div style={{ display: "flex", gap: "var(--space-6)", justifyContent: "center", flexWrap: "wrap", marginBottom: "var(--space-8)" }}>
-        {[
-          { tier: "Starter", from: "₹15,000", desc: "1 service · Perfect to begin" },
-          { tier: "Growth", from: "₹35,000", desc: "2–3 services · Most popular" },
-          { tier: "Scale", from: "₹70,000", desc: "Full-stack · For serious brands" },
-        ].map((p) => (
-          <div key={p.tier} style={{
-            background: "var(--color-bg-tertiary)",
-            border: "1px solid var(--color-border)",
-            borderRadius: "var(--radius-lg)",
-            padding: "var(--space-6) var(--space-8)",
-            minWidth: "180px",
-          }}>
-            <div style={{ fontSize: "var(--text-xs)", color: "var(--color-gold)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", marginBottom: "var(--space-2)" }}>{p.tier}</div>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: "1.8rem", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "var(--space-1)" }}>from {p.from}<span style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)" }}>/mo</span></div>
-            <div style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)" }}>{p.desc}</div>
-          </div>
-        ))}
+      {/* Background glow */}
+      <div style={{
+        position: "absolute", inset: 0,
+        background: "radial-gradient(ellipse at center, rgba(201,168,76,0.06) 0%, transparent 70%)",
+        pointerEvents: "none",
+      }} />
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <span className="eyebrow" style={{ display: "block", marginBottom: "var(--space-5)" }}>Custom Packages</span>
+        <h2 style={{
+          fontFamily: "var(--font-display)",
+          fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
+          fontWeight: 600,
+          color: "var(--color-text-primary)",
+          marginBottom: "var(--space-6)",
+          lineHeight: 1.2,
+        }}>
+          Every brand is different.{" "}
+          <span style={{ color: "var(--color-gold)" }}>So is every package.</span>
+        </h2>
+        <p style={{
+          color: "var(--color-text-secondary)",
+          maxWidth: "560px",
+          margin: "0 auto var(--space-8)",
+          lineHeight: "var(--leading-relaxed)",
+          fontSize: "var(--text-large)",
+        }}>
+          We don&apos;t believe in fixed pricing. Tell us your goals and budget, and we&apos;ll build a plan that actually fits &mdash; no bloated retainers, no unnecessary add-ons.
+        </p>
+        <div style={{ display: "flex", gap: "var(--space-4)", justifyContent: "center", flexWrap: "wrap" }}>
+          <a
+            href="https://cal.com/anayadigital/strategy-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary btn-lg"
+          >
+            Book a Free Strategy Call
+          </a>
+          <Link href="/contact" className="btn btn-outline btn-lg">
+            Send an Enquiry
+          </Link>
+        </div>
       </div>
-      <Link href="/contact" className="btn btn-primary btn-lg">Book a Free Strategy Call</Link>
     </div>
   );
 }
@@ -360,7 +377,7 @@ export default function ServicesPage() {
       <section style={{ background: "var(--color-bg-primary)", paddingBottom: "var(--section-py)" }}>
         <div className="container" style={{ display: "flex", flexDirection: "column", gap: "var(--space-8)" }}>
           {services.map((s, i) => <ServiceCard key={s.id} s={s} index={i} />)}
-          <PricingTeaser />
+          <CustomPricingCTA />
         </div>
       </section>
     </>

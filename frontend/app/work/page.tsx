@@ -27,7 +27,7 @@ const projects = [
     industry: "Agriculture & Organic",
     tags: ["SEO", "Branding"],
     headline: "3× Website Traffic in 3 Months",
-    desc: "Brought Ganga Farm from invisible to #1 on Google Maps in Dehradun — local SEO, GMB optimisation, and a brand identity that reflects their organic, community-first values.",
+    desc: "Brought Ganga Farm from invisible to #1 on Google Maps for organic produce in Lucknow — local SEO, GMB optimisation, and a brand identity that reflects their organic, community-first values.",
     result1: { val: "3×", label: "Website Traffic" },
     result2: { val: "#1", label: "Google Maps Rank" },
     num: "02",
@@ -205,10 +205,9 @@ function PlaceholderCard() {
 function AggregateStats() {
   const { ref, v } = useReveal();
   const stats = [
-    { val: "500K+", label: "Total Impressions" },
-    { val: "1,200+", label: "Leads Generated" },
-    { val: "20+", label: "Campaigns Delivered" },
-    { val: "100%", label: "Client Retention" },
+    { val: "5+", label: "Campaigns Delivered" },
+    { val: "3+", label: "Clients Served" },
+    { val: "3+", label: "Industries" },
   ];
   return (
     <div ref={ref} style={{

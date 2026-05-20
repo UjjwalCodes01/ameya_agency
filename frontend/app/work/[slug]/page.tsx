@@ -54,7 +54,7 @@ const caseStudies: Record<string, CaseStudy> = {
     tags: ["Local SEO", "Branding", "Awareness Campaigns"],
     num: "02",
     accent: "rgba(34,197,94,0.10)",
-    taglineHero: "From invisible to #1 on Google Maps in Dehradun.",
+    taglineHero: "From invisible to #1 on Google Maps in Lucknow.",
     duration: "3 months",
     year: "2024",
     stats: [
@@ -65,7 +65,7 @@ const caseStudies: Record<string, CaseStudy> = {
     ],
     challenge: {
       heading: "The Challenge",
-      body: "Ganga Farm is an organic agriculture brand based in Dehradun — quality produce, trusted by local families for years. But they had no digital presence. No Google Maps presence, a dated website with almost zero traffic, and no way for new customers to find them. Local competitors were outranking them despite inferior products.",
+      body: "Ganga Farm is an organic agriculture brand based in Lucknow — quality produce, trusted by local families for years. But they had no digital presence. No Google Maps presence, a dated website with almost zero traffic, and no way for new customers to find them. Local competitors were outranking them despite inferior products.",
     },
     approach: {
       heading: "Our Approach",
@@ -75,16 +75,16 @@ const caseStudies: Record<string, CaseStudy> = {
         "Local keyword research & on-page SEO",
         "Brand identity refresh (logo, colours, packaging direction)",
         "Review generation strategy (40+ 5-star reviews)",
-        "Meta awareness ads targeting Dehradun & surrounding areas",
+        "Meta awareness ads targeting Lucknow & surrounding areas",
       ],
     },
     execution: {
       heading: "Execution",
-      body: "We rebuilt their Google Business Profile from scratch — complete with professional photos, updated categories, weekly posts, and a Q&A section. On the website, we rewrote all key pages with local keywords and added structured schema markup. Simultaneously, we ran a month-long Meta awareness campaign targeting a 15km radius around Dehradun.",
+      body: "We rebuilt their Google Business Profile from scratch — complete with professional photos, updated categories, weekly posts, and a Q&A section. On the website, we rewrote all key pages with local keywords and added structured schema markup. Simultaneously, we ran a month-long Meta awareness campaign targeting a 15km radius around Lucknow.",
     },
     results: {
       heading: "Results",
-      body: "Within 3 months, Ganga Farm ranked #1 on Google Maps for key terms like 'organic farm Dehradun' and 'fresh vegetables Dehradun'. Website traffic tripled, phone calls from Google increased by 85%, and their review count went from 6 to over 46. They now have a waiting list for weekly vegetable boxes.",
+      body: "Within 3 months, Ganga Farm ranked #1 on Google Maps for key terms like 'organic farm Lucknow' and 'fresh vegetables Lucknow'. Website traffic tripled, phone calls from Google increased by 85%, and their review count went from 6 to over 46. They now have a waiting list for weekly vegetable boxes.",
     },
   },
   fabricvton: {

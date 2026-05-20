@@ -3,10 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 30, suffix: "+", label: "Clients Served", desc: "Brands that trust us" },
-  { value: 150, suffix: "+", label: "Campaigns Run", desc: "Across Meta, Google & more" },
-  { value: 8, suffix: "+", label: "Industries", desc: "Music to Agriculture" },
-  { value: 3, suffix: "+", label: "Years Experience", desc: "Of premium marketing" },
+  { value: 3, suffix: "+", label: "Clients Served", desc: "Brands that trust us" },
+  { value: 10, suffix: "+", label: "Campaigns Run", desc: "Across Meta, Google & more" },
+  { value: 3, suffix: "+", label: "Industries Served", desc: "Music to Agriculture" },
 ];
 
 function useCounter(target: number, duration: number, active: boolean) {

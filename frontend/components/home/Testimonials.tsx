@@ -10,7 +10,7 @@ const testimonials = [
     initials: "AM",
   },
   {
-    quote: "We went from barely being found online to ranking #1 on Google Maps in Dehradun within 3 months. The SEO work Anaya did for Ganga Farm has brought in real local customers — not just clicks.",
+    quote: "We went from barely being found online to ranking #1 on Google Maps in Lucknow within 3 months. The SEO work Anaya did for Ganga Farm has brought in real local customers — not just clicks.",
     name: "Ritu Sharma",
     role: "Owner, Ganga Farm",
     initials: "RS",

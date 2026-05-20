@@ -45,7 +45,7 @@ const quickLinks = [
   { label: "About",    href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Work",     href: "/work" },
-  { label: "Blog",     href: "/blog" },
+  // Blog hidden until 6+ posts are ready
   { label: "Contact",  href: "/contact" },
 ];
 
@@ -293,62 +293,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      {/* ── Team Section ────────────────────────────────── */}
-      <div
-        className="container"
-        style={{
-          paddingBottom: "clamp(40px, 5vw, 60px)",
-        }}
-      >
-        <div
-          style={{
-            background:    "linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 100%)",
-            border:        "1px solid var(--color-border-gold)",
-            borderRadius:  "var(--radius-xl)",
-            padding:       "clamp(32px, 4vw, 48px)",
-            display:       "flex",
-            alignItems:    "center",
-            justifyContent: "space-between",
-            flexWrap:      "wrap",
-            gap:           "var(--space-6)",
-          }}
-        >
-          <div>
-            <p
-              style={{
-                fontFamily:    "var(--font-body)",
-                fontSize:      "var(--text-xs)",
-                fontWeight:    600,
-                letterSpacing: "var(--tracking-widest)",
-                textTransform: "uppercase",
-                color:         "var(--color-gold)",
-                marginBottom:  "var(--space-2)",
-              }}
-            >
-              Our Leadership
-            </p>
-            <h4
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize:   "clamp(1.3rem, 2.5vw, 1.8rem)",
-                fontWeight: 600,
-                color:      "var(--color-text-primary)",
-                lineHeight: 1.2,
-              }}
-            >
-              Meet the People Behind the Work
-            </h4>
-          </div>
-          <Link
-            href="/manager"
-            className="btn btn-outline"
-            style={{ flexShrink: 0 }}
-          >
-            Meet Our Team
-          </Link>
-        </div>
-      </div>
-
       {/* Bottom bar */}
       <div
         style={{
@@ -404,23 +348,6 @@ export default function Footer() {
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
             >
               Terms of Service
-            </Link>
-            {/* Hidden internal link — not in nav, not indexed */}
-            <Link
-              href="/manager"
-              style={{
-                fontSize:       "0.65rem",
-                color:          "rgba(255,255,255,0.2)",
-                textDecoration: "none",
-                letterSpacing:  "2px",
-                textTransform:  "uppercase",
-                fontWeight:     400,
-                transition:     "color var(--transition-fast)",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.2)")}
-            >
-              Team
             </Link>
           </div>
         </div>

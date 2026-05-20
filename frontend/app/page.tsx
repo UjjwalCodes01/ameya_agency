@@ -5,15 +5,15 @@ import ServicesTeaser from "@/components/home/ServicesTeaser";
 import ClientShowcase from "@/components/home/ClientShowcase";
 import StatsBar       from "@/components/home/StatsBar";
 import ProcessSteps   from "@/components/home/ProcessSteps";
-import Testimonials   from "@/components/home/Testimonials";
+// Testimonials removed until real client quotes are available
 import CTAStrip       from "@/components/home/CTAStrip";
 
 export const metadata: Metadata = {
-  title: "Anaya | Best Digital Marketing Agency in India & Dehradun",
+  title: "Anaya | Best Digital Marketing Agency in India & Lucknow",
   description:
-    "Anaya is a premium digital marketing agency in Dehradun, India. As a full service digital marketing agency, we help brands grow through social media management, SEO services, paid ads, and branding.",
+    "Anaya is a premium digital marketing agency in Lucknow, India. As a full service digital marketing agency, we help brands grow through social media management, SEO services, paid ads, and branding.",
   keywords: [
-    "digital marketing agency Dehradun",
+    "digital marketing agency Lucknow",
     "digital marketing agency India",
     "best digital marketing agency India",
     "full service digital marketing agency",
@@ -47,7 +47,7 @@ const jsonLd = {
   "@id": "https://anayadigital.in",
   name: "Anaya Digital Marketing Agency",
   description:
-    "A full service digital marketing agency in Dehradun providing premium social media management, SEO services, paid ads, and brand identity design across India.",
+    "A full service digital marketing agency in Lucknow providing premium social media management, SEO services, paid ads, and brand identity design across India.",
   url: "https://anayadigital.in",
   telephone: "+91-99999-99999",
   email: "hello@anayadigital.in",
@@ -102,7 +102,7 @@ export default function HomePage() {
       <ClientShowcase />
       <StatsBar />
       <ProcessSteps />
-      <Testimonials />
+      {/* Testimonials section removed — will be added once real client quotes are available */}
       <CTAStrip />
     </>
   );

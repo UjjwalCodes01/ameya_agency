@@ -67,7 +67,7 @@ export const articles: Article[] = [
     featured: false,
     accentColor: "rgba(34,197,94,0.08)",
     body: [
-      { type: "p", content: "Every day, millions of Indians search Google for phrases like 'organic vegetables near me,' 'best café in Dehradun,' or 'digital marketing agency Pune.' These are high-intent searches — people who are ready to buy, visit, or enquire. Local SEO is how your business shows up for these searches. And most Indian businesses have no idea it exists." },
+      { type: "p", content: "Every day, millions of Indians search Google for phrases like 'organic vegetables near me,' 'best café in Lucknow,' or 'digital marketing agency Pune.' These are high-intent searches — people who are ready to buy, visit, or enquire. Local SEO is how your business shows up for these searches. And most Indian businesses have no idea it exists." },
       { type: "h2", content: "What Is Local SEO?" },
       { type: "p", content: "Local SEO is the practice of optimising your online presence so that your business appears in geographically-relevant searches — especially the Google Map Pack (the 3 listings that appear under the map in search results). When someone searches 'flower shop Chandigarh,' the businesses that appear in the Map Pack get the overwhelming majority of clicks and calls." },
       { type: "p", content: "Unlike organic SEO (which can take 6–12 months to see results), Local SEO can show significant improvements in 60–90 days — making it one of the highest-ROI marketing activities for any local or regional business." },
@@ -89,12 +89,12 @@ export const articles: Article[] = [
       { type: "ul", items: [
         "Include your city/region in the page title and meta description",
         "Write an 'About Us' or 'Contact' page that mentions your location clearly",
-        "Create service pages for each area you serve (e.g., 'Catering Services in Dehradun')",
+        "Create service pages for each area you serve (e.g., 'Catering Services in Lucknow')",
         "Add LocalBusiness schema markup to your homepage",
         "Embed a Google Map on your contact page",
       ]},
       { type: "h2", content: "The Opportunity Most Businesses Are Missing" },
-      { type: "p", content: "Here's the reality: in most Indian cities and towns, Local SEO is a wide-open opportunity. The competition is low, the tools are free (Google Business Profile), and the intent of searchers is extremely high. Someone searching 'organic milk delivery Dehradun' is not browsing — they're ready to buy." },
+      { type: "p", content: "Here's the reality: in most Indian cities and towns, Local SEO is a wide-open opportunity. The competition is low, the tools are free (Google Business Profile), and the intent of searchers is extremely high. Someone searching 'organic milk delivery Lucknow' is not browsing — they're ready to buy." },
       { type: "blockquote", content: "Social media builds awareness. Local SEO captures demand that already exists. Both matter — but if you're a local business, SEO is where the money is." },
       { type: "h2", content: "Where to Start" },
       { type: "p", content: "If you do nothing else this week, claim and fully complete your Google Business Profile. Add photos, verify your address, and put a link to your review page in your WhatsApp status. These three steps alone will put you ahead of 80% of your local competitors." },
