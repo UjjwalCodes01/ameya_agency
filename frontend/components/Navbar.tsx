@@ -72,7 +72,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
             <Image
-              src="/image.png"
+              src="/anaya.png"
               alt="Anaya Digital Marketing Agency"
               width={500}
               height={500}
@@ -230,7 +230,7 @@ export default function Navbar() {
         {/* Logo in overlay */}
         <div style={{ marginBottom: "var(--space-12)" }}>
           <Image
-            src="/image.png"
+            src="/anaya.png"
             alt="Anaya"
             width={500}
             height={500}

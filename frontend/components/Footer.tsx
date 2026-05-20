@@ -97,7 +97,7 @@ export default function Footer() {
           <div>
             <Link href="/" style={{ display: "inline-block", marginBottom: "var(--space-5)" }}>
               <Image
-                src="/image.png"
+                src="/anaya.png"
                 alt="Anaya Digital Marketing Agency"
                 width={500}
                 height={500}
