@@ -375,8 +375,14 @@ export default function ServicesPage() {
 
       {/* Services List */}
       <section style={{ background: "var(--color-bg-primary)", paddingBottom: "var(--section-py)" }}>
-        <div className="container" style={{ display: "flex", flexDirection: "column", gap: "var(--space-8)" }}>
+        <div className="container" style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 450px), 1fr))",
+          gap: "var(--space-8)"
+        }}>
           {services.map((s, i) => <ServiceCard key={s.id} s={s} index={i} />)}
+        </div>
+        <div className="container">
           <CustomPricingCTA />
         </div>
       </section>
