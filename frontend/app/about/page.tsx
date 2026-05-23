@@ -69,14 +69,127 @@ const industries = [
 ];
 
 /* ── Differentiators ─────────────────────────────────────── */
-const whyUs = [
-  "Strategy before execution — no random posting, ever",
-  "Transparent reporting — you see exactly what's working",
-  "Senior-level attention on every account, not interns",
-  "Lucknow-based with deep understanding of Indian markets",
-  "Built for long-term growth, not short-term vanity metrics",
-  "We only take on clients we know we can deliver results for",
+const whyUsData = [
+  {
+    title: "Strategy First",
+    desc: "No random posting, ever. We build comprehensive strategies before executing a single tactic.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+  },
+  {
+    title: "Transparent Reporting",
+    desc: "You see exactly what's working. Real-time dashboards and honest monthly reviews.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+  },
+  {
+    title: "Senior Attention",
+    desc: "Your account is handled by experts, not handed off to junior interns after the pitch.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+  },
+  {
+    title: "Local Expertise",
+    desc: "Lucknow-based with a deep, nuanced understanding of regional and Indian markets.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  },
+  {
+    title: "Long-Term Growth",
+    desc: "We build systems that compound over time, ignoring short-term vanity metrics.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+  },
+  {
+    title: "Vetted Partnerships",
+    desc: "We strictly take on clients we know we can deliver exceptional, measurable results for.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  },
 ];
+
+/* ── Spotlight Grid Component ────────────────────────────── */
+function SpotlightGrid({ children }: { children: React.ReactNode }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const cards = containerRef.current.querySelectorAll('.spotlight-card');
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+      (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+    });
+  };
+
+  return (
+    <div 
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="spotlight-container"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+        gap: "var(--space-6)",
+        position: "relative",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function SpotlightCard({ item }: { item: typeof whyUsData[0] }) {
+  return (
+    <div className="spotlight-card" style={{
+      position: "relative",
+      background: "var(--color-border)",
+      borderRadius: "var(--radius-lg)",
+      padding: "1px", // The glowing border width
+      overflow: "hidden",
+      height: "100%",
+    }}>
+      {/* Dynamic Border Glow */}
+      <div className="spotlight-glow" style={{
+        position: "absolute",
+        inset: 0,
+        background: "radial-gradient(400px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(201,168,76,0.8), transparent 40%)",
+        transition: "opacity 0.3s",
+        zIndex: 0,
+        opacity: 0, // Handled by CSS on parent hover
+      }} />
+
+      {/* Inner Card content container */}
+      <div style={{
+        position: "relative",
+        zIndex: 1,
+        background: "var(--color-bg-secondary)",
+        borderRadius: "calc(var(--radius-lg) - 1px)",
+        padding: "clamp(32px, 4vw, 40px)",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        gap: "var(--space-4)",
+      }}>
+        {/* Dynamic Inner Background Glow */}
+        <div className="spotlight-glow" style={{
+          position: "absolute",
+          inset: 0,
+          background: "radial-gradient(400px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(201,168,76,0.06), transparent 40%)",
+          transition: "opacity 0.3s",
+          pointerEvents: "none",
+          opacity: 0, // Handled by CSS on parent hover
+        }} />
+        
+        <div style={{ position: "relative", zIndex: 2 }}>
+          <div style={{ color: "var(--color-gold)", marginBottom: "var(--space-5)" }}>{item.icon}</div>
+          <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "var(--space-3)" }}>
+            {item.title}
+          </h3>
+          <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)" }}>
+            {item.desc}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const BentoCard = ({ ind, i, revealStyle }: { ind: any, i: number, revealStyle: any }) => {
   const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
@@ -201,6 +314,240 @@ const BentoCard = ({ ind, i, revealStyle }: { ind: any, i: number, revealStyle: 
           transform: glare.opacity ? "scale(1.1) translateZ(10px)" : "scale(1)",
         }}>
           {i + 1}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ── Holographic Team Badge ──────────────────────────────── */
+const teamMembers = [
+  {
+    idNumber: "ANY-001",
+    access: "LVL_ALPHA",
+    initials: "T",
+    name: "Tejasvi",
+    title: "Co-Founder & Strategy Lead",
+    bio: "Great marketing starts with knowing what not to do.",
+    detail: "Leads strategy and client relations with a focus on measurable growth and brand excellence.",
+    linkedin: "https://linkedin.com/in/tejasvi",
+  },
+  {
+    idNumber: "ANY-002",
+    access: "LVL_BETA",
+    initials: "AS",
+    name: "Aaditya Singh",
+    title: "Co-Founder & Performance Marketing",
+    bio: "Every rupee spent should work harder than the last.",
+    detail: "Oversees campaign execution and performance marketing operations across all client accounts.",
+    linkedin: "https://linkedin.com/in/aadityasingh",
+  },
+  {
+    idNumber: "ANY-003",
+    access: "LVL_BETA",
+    initials: "AS",
+    name: "Aaditya Singhal",
+    title: "Co-Founder & Content & Creative",
+    bio: "Content without strategy is just noise.",
+    detail: "Drives content strategy and creative direction ensuring every piece of content serves the brand.",
+    linkedin: "https://linkedin.com/in/aadityasinghal",
+  },
+  {
+    idNumber: "ANY-004",
+    access: "LVL_GAMMA",
+    initials: "UT",
+    name: "Ujjwal Tyagi",
+    title: "Co-Founder & Paid Media",
+    bio: "Data tells you where to go. Intuition tells you how fast.",
+    detail: "Manages digital advertising and paid media campaigns delivering consistent ROI for clients.",
+    linkedin: "https://linkedin.com/in/ujjwaltyagi",
+  },
+  {
+    idNumber: "ANY-005",
+    access: "LVL_DELTA",
+    initials: "RR",
+    name: "Rudra Veer Singh Rathore",
+    title: "Co-Founder & SEO & Organic Growth",
+    bio: "Organic growth is the only kind that compounds.",
+    detail: "Leads SEO and organic growth initiatives building long-term digital presence for every client.",
+    linkedin: "https://linkedin.com/in/rudraveersinghrathore",
+  },
+];
+
+const HoloBadge = ({ member, index, revealStyle }: { member: typeof teamMembers[0]; index: number; revealStyle: any }) => {
+  const [hologram, setHologram] = useState({ x: 50, y: 50, opacity: 0 });
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const ref = useRef<HTMLDivElement>(null);
+  
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const xPct = (x / rect.width) * 100;
+    const yPct = (y / rect.height) * 100;
+    
+    const rotateX = ((y / rect.height) - 0.5) * -15; 
+    const rotateY = ((x / rect.width) - 0.5) * 15;  
+    
+    setHologram({ x: xPct, y: yPct, opacity: 1 });
+    setRotate({ x: rotateX, y: rotateY });
+  };
+  
+  const handleMouseLeave = () => {
+    setHologram(prev => ({ ...prev, opacity: 0 }));
+    setRotate({ x: 0, y: 0 });
+  };
+
+  return (
+    <div style={{ perspective: "1000px", height: "100%" }}>
+      <div
+        ref={ref}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          position: "relative",
+          background: "linear-gradient(180deg, #111 0%, #050505 100%)",
+          border: "1px solid var(--color-border)",
+          borderRadius: "16px",
+          padding: "clamp(24px, 4vw, 32px)",
+          textAlign: "left",
+          opacity: revealStyle.opacity,
+          transition: hologram.opacity 
+            ? "border-color 0.3s ease" 
+            : (revealStyle.opacity === 1 ? "all 0.6s cubic-bezier(0.25, 1, 0.5, 1)" : `all 0.8s cubic-bezier(0.25, 1, 0.5, 1) ${index * 80 + 100}ms`),
+          transform: hologram.opacity 
+            ? `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale(1.02)` 
+            : revealStyle.transform,
+          transformStyle: "preserve-3d",
+          overflow: "hidden",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          borderColor: hologram.opacity ? "var(--color-gold-muted)" : "var(--color-border)",
+          boxShadow: hologram.opacity ? "0 20px 40px rgba(0,0,0,0.8)" : "0 10px 30px rgba(0,0,0,0.5)",
+        }}
+      >
+        {/* Holographic Sheen Layer */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: `radial-gradient(circle at ${hologram.x}% ${hologram.y}%, rgba(201,168,76,0.2) 0%, rgba(0,255,255,0.05) 30%, rgba(255,0,255,0.05) 60%, transparent 80%)`,
+          opacity: hologram.opacity,
+          transition: "opacity 0.4s ease",
+          pointerEvents: "none",
+          zIndex: 0,
+          mixBlendMode: "color-dodge",
+        }} />
+        
+        {/* Top ID Markings */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "var(--space-6)", position: "relative", zIndex: 1 }}>
+          <div style={{ 
+            fontFamily: "var(--font-mono)", 
+            fontSize: "0.65rem", 
+            color: "var(--color-text-muted)", 
+            letterSpacing: "2px",
+            display: "flex", flexDirection: "column", gap: "4px"
+          }}>
+            <span>ID: {member.idNumber}</span>
+            <span style={{ color: "var(--color-gold)" }}>{member.access}</span>
+          </div>
+          {/* Fake Barcode */}
+          <div style={{
+            display: "flex", gap: "2px", height: "16px", opacity: 0.3
+          }}>
+            {[1,3,2,1,4,1,2,3,1,1,2,3,1,2,1].map((w, idx) => (
+              <div key={idx} style={{ width: `${w}px`, background: "var(--color-text-primary)", height: "100%" }} />
+            ))}
+          </div>
+        </div>
+
+        {/* Content Container (Pops out in 3D) */}
+        <div style={{ position: "relative", zIndex: 1, transform: hologram.opacity ? "translateZ(30px)" : "none", transition: "transform 0.4s ease-out", flex: 1, display: "flex", flexDirection: "column" }}>
+          
+          <div style={{
+            width: "60px", height: "60px", borderRadius: "8px",
+            background: "linear-gradient(135deg, var(--color-gold-dark), var(--color-gold-light))",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            marginBottom: "var(--space-5)",
+            fontSize: "1.2rem", fontWeight: 700, color: "#0A0A0A",
+            fontFamily: "var(--font-display)",
+            letterSpacing: "1px",
+            boxShadow: hologram.opacity ? "0 10px 20px rgba(201,168,76,0.3)" : "none",
+            transition: "box-shadow 0.4s ease",
+          }}>
+            {member.initials}
+          </div>
+
+          <h3 style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "1.6rem",
+            fontWeight: 600,
+            color: "var(--color-text-primary)",
+            marginBottom: "2px",
+            lineHeight: 1.2,
+          }}>
+            {member.name}
+          </h3>
+
+          <p style={{
+            fontSize: "0.7rem",
+            color: "var(--color-gold)",
+            fontFamily: "var(--font-mono)",
+            textTransform: "uppercase",
+            letterSpacing: "2px",
+            marginBottom: "var(--space-5)",
+          }}>
+            {member.title}
+          </p>
+
+          <p style={{
+            fontFamily: "var(--font-display)",
+            fontStyle: "italic",
+            fontSize: "1.1rem",
+            color: hologram.opacity ? "var(--color-text-primary)" : "var(--color-text-secondary)",
+            lineHeight: 1.4,
+            marginBottom: "var(--space-4)",
+            borderLeft: "2px solid var(--color-gold)",
+            paddingLeft: "var(--space-4)",
+            transition: "color 0.4s ease",
+          }}>
+            "{member.bio}"
+          </p>
+
+          <p style={{
+            fontSize: "var(--text-small)",
+            color: "var(--color-text-muted)",
+            lineHeight: 1.5,
+            marginBottom: "var(--space-6)",
+            flex: 1,
+          }}>
+            {member.detail}
+          </p>
+
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              fontSize: "0.75rem",
+              fontFamily: "var(--font-mono)",
+              color: "var(--color-gold)",
+              textDecoration: "none",
+              textTransform: "uppercase",
+              letterSpacing: "1px",
+              marginTop: "auto",
+              paddingTop: "var(--space-4)",
+              borderTop: "1px dashed rgba(255,255,255,0.1)",
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            Verify Profile
+          </a>
         </div>
       </div>
     </div>
@@ -344,151 +691,9 @@ export default function AboutPage() {
             <h2>The People Behind <span style={{ color: "var(--color-gold)" }}>Your Growth</span></h2>
             <p>Small by design. Senior by standard. Passionate by nature.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "var(--space-6)", marginTop: "var(--space-4)" }}>
-            {[
-              {
-                initials: "T",
-                name: "Tejasvi",
-                title: "Co-Founder & Strategy Lead",
-                bio: "Great marketing starts with knowing what not to do.",
-                detail: "Leads strategy and client relations with a focus on measurable growth and brand excellence.",
-                linkedin: "https://linkedin.com/in/tejasvi",
-              },
-              {
-                initials: "AS",
-                name: "Aaditya Singh",
-                title: "Co-Founder & Performance Marketing",
-                bio: "Every rupee spent should work harder than the last.",
-                detail: "Oversees campaign execution and performance marketing operations across all client accounts.",
-                linkedin: "https://linkedin.com/in/aadityasingh",
-              },
-              {
-                initials: "AS",
-                name: "Aaditya Singhal",
-                title: "Co-Founder & Content & Creative",
-                bio: "Content without strategy is just noise.",
-                detail: "Drives content strategy and creative direction ensuring every piece of content serves the brand.",
-                linkedin: "https://linkedin.com/in/aadityasinghal",
-              },
-              {
-                initials: "UT",
-                name: "Ujjwal Tyagi",
-                title: "Co-Founder & Paid Media",
-                bio: "Data tells you where to go. Intuition tells you how fast.",
-                detail: "Manages digital advertising and paid media campaigns delivering consistent ROI for clients.",
-                linkedin: "https://linkedin.com/in/ujjwaltyagi",
-              },
-              {
-                initials: "RR",
-                name: "Rudra Veer Singh Rathore",
-                title: "Co-Founder & SEO & Organic Growth",
-                bio: "Organic growth is the only kind that compounds.",
-                detail: "Leads SEO and organic growth initiatives building long-term digital presence for every client.",
-                linkedin: "https://linkedin.com/in/rudraveersinghrathore",
-              },
-            ].map((member, i) => (
-              <div
-                key={member.name}
-                style={{
-                  background: "var(--color-bg-tertiary)",
-                  border: "1px solid var(--color-border-gold)",
-                  borderRadius: "var(--radius-xl)",
-                  padding: "clamp(32px, 4vw, 44px)",
-                  textAlign: "center",
-                  opacity: teamR.style.opacity,
-                  transform: teamR.style.transform,
-                  transition: `all 0.7s ease ${i * 100 + 100}ms`,
-                }}
-              >
-                {/* Avatar */}
-                <div style={{
-                  width: "80px", height: "80px", borderRadius: "50%",
-                  background: "linear-gradient(135deg, var(--color-gold-dark), var(--color-gold-light))",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  margin: "0 auto var(--space-5)",
-                  fontSize: "1.5rem", fontWeight: 700, color: "#0A0A0A",
-                  fontFamily: "var(--font-display)",
-                  border: "2px solid var(--color-gold)",
-                  letterSpacing: "1px",
-                }}>
-                  {member.initials}
-                </div>
-
-                {/* Name */}
-                <h3 style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "1.4rem",
-                  fontWeight: 600,
-                  color: "var(--color-text-primary)",
-                  marginBottom: "var(--space-1)",
-                  lineHeight: 1.2,
-                }}>
-                  {member.name}
-                </h3>
-
-                {/* Title */}
-                <p style={{
-                  fontSize: "var(--text-xs)",
-                  color: "var(--color-gold)",
-                  textTransform: "uppercase",
-                  letterSpacing: "var(--tracking-wider)",
-                  marginBottom: "var(--space-4)",
-                  fontWeight: 500,
-                }}>
-                  {member.title}
-                </p>
-
-                {/* Quote */}
-                <p style={{
-                  fontFamily: "var(--font-display)",
-                  fontStyle: "italic",
-                  fontSize: "var(--text-base)",
-                  color: "var(--color-text-secondary)",
-                  lineHeight: "var(--leading-relaxed)",
-                  marginBottom: "var(--space-4)",
-                  borderLeft: "2px solid var(--color-gold)",
-                  paddingLeft: "var(--space-4)",
-                  textAlign: "left",
-                }}>
-                  &ldquo;{member.bio}&rdquo;
-                </p>
-
-                {/* Detail */}
-                <p style={{
-                  fontSize: "var(--text-small)",
-                  color: "var(--color-text-muted)",
-                  lineHeight: "var(--leading-relaxed)",
-                  marginBottom: "var(--space-5)",
-                }}>
-                  {member.detail}
-                </p>
-
-                {/* LinkedIn */}
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "var(--space-2)",
-                    fontSize: "var(--text-xs)",
-                    color: "var(--color-gold)",
-                    textDecoration: "none",
-                    border: "1px solid var(--color-border-gold)",
-                    borderRadius: "var(--radius-full)",
-                    padding: "6px 16px",
-                    fontWeight: 500,
-                    letterSpacing: "var(--tracking-wide)",
-                    transition: "all var(--transition-fast)",
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-gold-muted)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                  LinkedIn
-                </a>
-              </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "var(--space-6)", marginTop: "var(--space-8)" }}>
+            {teamMembers.map((member, i) => (
+              <HoloBadge key={member.name} member={member} index={i} revealStyle={teamR.style} />
             ))}
           </div>
         </div>
@@ -548,38 +753,35 @@ export default function AboutPage() {
 
       {/* ── Why Choose Anaya ─────────────────────────────── */}
       <section className="section" style={{ background: "var(--color-bg-primary)" }}>
+        <style>{`
+          .spotlight-container:hover .spotlight-glow {
+            opacity: 1 !important;
+          }
+          @media (max-width: 1024px) {
+            .spotlight-glow {
+              opacity: 0.5 !important;
+              background: radial-gradient(circle at 50% 0%, rgba(201,168,76,0.2), transparent 70%) !important;
+            }
+          }
+        `}</style>
+
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "var(--space-12)", alignItems: "center" }}>
-            {/* Left */}
-            <div ref={whyR.ref} style={whyR.style}>
-              <span className="eyebrow" style={{ display: "block", marginBottom: "var(--space-5)" }}>Why Us</span>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--text-h2)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2, marginBottom: "var(--space-5)" }}>
-                Why Choose <span style={{ color: "var(--color-gold)" }}>Anaya</span>
-              </h2>
-              <p style={{ color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", fontSize: "var(--text-large)" }}>
-                There are hundreds of agencies. Here&apos;s why the brands that care about quality choose us.
-              </p>
-            </div>
-            {/* Right — list */}
-            <div>
-              <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
-                {whyUs.map((item, i) => (
-                  <li key={item} style={{
-                    display: "flex", gap: "var(--space-4)", alignItems: "flex-start",
-                    padding: "var(--space-5)",
-                    background: "var(--color-bg-secondary)",
-                    border: "1px solid var(--color-border)",
-                    borderRadius: "var(--radius-md)",
-                    opacity: whyR.style.opacity,
-                    transform: whyR.style.transform,
-                    transition: `all 0.6s ease ${i * 80 + 200}ms`,
-                  }}>
-                    <span style={{ display: "inline-block", width: "5px", height: "5px", background: "var(--color-gold)", flexShrink: 0, marginTop: "6px", borderRadius: "1px" }} />
-                    <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)" }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div ref={whyR.ref} style={{ ...whyR.style, textAlign: "center", marginBottom: "var(--space-12)", maxWidth: "700px", margin: "0 auto var(--space-12)" }}>
+            <span className="eyebrow" style={{ display: "block", marginBottom: "var(--space-5)" }}>Why Us</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--text-h2)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2, marginBottom: "var(--space-5)" }}>
+              Why Choose <span style={{ color: "var(--color-gold)" }}>Anaya</span>
+            </h2>
+            <p style={{ color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", fontSize: "var(--text-large)" }}>
+              There are hundreds of agencies. Here's why the brands that care about real, sustainable growth choose to partner with us.
+            </p>
+          </div>
+          
+          <div style={{ ...whyR.style }}>
+            <SpotlightGrid>
+              {whyUsData.map((item) => (
+                <SpotlightCard key={item.title} item={item} />
+              ))}
+            </SpotlightGrid>
           </div>
         </div>
       </section>

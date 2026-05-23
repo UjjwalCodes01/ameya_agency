@@ -76,7 +76,7 @@ export default function Navbar() {
               alt="Anaya Digital Marketing Agency"
               width={500}
               height={500}
-              style={{ objectFit: "contain", width: "auto", height: "64px" }}
+              style={{ objectFit: "contain", width: "auto", height: "96px" }}
               unoptimized={true}
               priority
             />
