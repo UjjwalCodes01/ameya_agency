@@ -182,7 +182,9 @@ function ManagerCard({ manager, delay }: { manager: typeof managers[0]; delay: n
         onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setOpen(true); }}
         style={{
           background: "#1A1A1A",
-          border: `0.5px solid ${hovered ? "rgba(201,168,76,0.5)" : "rgba(201,168,76,0.2)"}`,
+          borderWidth: "0.5px",
+          borderStyle: "solid",
+          borderColor: hovered ? "rgba(201,168,76,0.5)" : "rgba(201,168,76,0.2)",
           borderRadius: "var(--radius-xl)",
           padding: "clamp(28px, 3vw, 40px)",
           textAlign: "center",
