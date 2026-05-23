@@ -43,19 +43,11 @@ export default function ClientShowcase() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [order, setOrder] = useState([0, 1, 2]);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { threshold: 0.15 });
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 768);
-    check();
-    window.addEventListener("resize", check, { passive: true });
-    return () => window.removeEventListener("resize", check);
   }, []);
 
   const cycleCards = () => {
@@ -79,24 +71,45 @@ export default function ClientShowcase() {
         </div>
 
         {/* Client Cards Stack */}
-        <div style={{
-          position: "relative",
-          width: "100%",
-          maxWidth: "480px",
-          margin: "0 auto",
-          height: "600px",
-        }}>
+        <style>{`
+          .client-showcase-container {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            height: 600px;
+          }
+          .client-showcase-card {
+            --tx-1: 30px;
+            --tx-2: -30px;
+            --rot-1: 10deg;
+            --rot-2: -8deg;
+          }
+          @media (max-width: 768px) {
+            .client-showcase-container {
+              overflow: hidden;
+            }
+            .client-showcase-card {
+              --tx-1: 12px;
+              --tx-2: -12px;
+              --rot-1: 4deg;
+              --rot-2: -3deg;
+            }
+          }
+        `}</style>
+        <div className="client-showcase-container">
           {clients.map((client, i) => {
             const pos = order.indexOf(i);
             const zIndex = 10 - pos;
             const translateY = pos === 0 ? 0 : pos === 1 ? -15 : 15;
-            const translateX = pos === 0 ? 0 : pos === 1 ? (isMobile ? 12 : 30) : (isMobile ? -12 : -30);
+            const translateXVar = pos === 0 ? "0px" : pos === 1 ? "var(--tx-1)" : "var(--tx-2)";
+            const rotateVar = pos === 0 ? "0deg" : pos === 1 ? "var(--rot-1)" : "var(--rot-2)";
             const scale = 1;
-            const rotate = pos === 0 ? "0deg" : pos === 1 ? (isMobile ? "4deg" : "10deg") : (isMobile ? "-3deg" : "-8deg");
 
             return (
               <div
                 key={client.name}
+                className="client-showcase-card"
                 onClick={() => { if (pos === 0) cycleCards(); }}
                 style={{
                   position: "absolute",
@@ -110,7 +123,7 @@ export default function ClientShowcase() {
                   borderRadius: "var(--radius-xl)",
                   padding: "var(--space-10)",
                   opacity: visible ? 1 : 0, // Keep all cards fully opaque
-                  transform: visible ? `translate(${translateX}px, ${translateY}px) scale(${scale}) rotate(${rotate})` : "translateY(40px)",
+                  transform: visible ? `translate(${translateXVar}, ${translateY}px) scale(${scale}) rotate(${rotateVar})` : "translateY(40px)",
                   transition: "all 0.6s cubic-bezier(0.23, 1, 0.32, 1)",
                   overflow: "hidden",
                   cursor: pos === 0 ? "pointer" : "default",
