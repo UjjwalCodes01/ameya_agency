@@ -43,11 +43,19 @@ export default function ClientShowcase() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [order, setOrder] = useState([0, 1, 2]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { threshold: 0.15 });
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check, { passive: true });
+    return () => window.removeEventListener("resize", check);
   }, []);
 
   const cycleCards = () => {
@@ -77,15 +85,14 @@ export default function ClientShowcase() {
           maxWidth: "480px",
           margin: "0 auto",
           height: "600px",
-          overflow: "hidden",
         }}>
           {clients.map((client, i) => {
             const pos = order.indexOf(i);
             const zIndex = 10 - pos;
-            const translateY = pos === 0 ? 0 : pos === 1 ? -10 : 10;
-            const translateX = pos === 0 ? 0 : pos === 1 ? 12 : -12;
+            const translateY = pos === 0 ? 0 : pos === 1 ? -15 : 15;
+            const translateX = pos === 0 ? 0 : pos === 1 ? (isMobile ? 12 : 30) : (isMobile ? -12 : -30);
             const scale = 1;
-            const rotate = pos === 0 ? "0deg" : pos === 1 ? "4deg" : "-3deg";
+            const rotate = pos === 0 ? "0deg" : pos === 1 ? (isMobile ? "4deg" : "10deg") : (isMobile ? "-3deg" : "-8deg");
 
             return (
               <div

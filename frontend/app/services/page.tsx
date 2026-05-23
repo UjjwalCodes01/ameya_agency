@@ -192,7 +192,6 @@ function ServiceCard({ s, index, total }: { s: typeof services[0]; index: number
         marginBottom: "var(--space-8)",
         willChange: "transform",
         minHeight: "400px",
-        overflow: "hidden",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -226,7 +225,7 @@ function ServiceCard({ s, index, total }: { s: typeof services[0]; index: number
               <p style={{ fontSize: "var(--text-xs)", color: "var(--color-gold)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", marginBottom: "var(--space-1)" }}>
                 {s.tagline}
               </p>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2 }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2 }}>
                 {s.title}
               </h2>
             </div>
@@ -462,10 +461,12 @@ export default function ServicesPage() {
             grid-template-columns: 1fr auto;
             gap: var(--space-8);
             align-items: start;
+            position: relative;
+            z-index: 1;
           }
           .service-card-watermark {
             font-family: var(--font-display);
-            font-size: clamp(6rem, 10vw, 15rem);
+            font-size: clamp(8rem, 12vw, 15rem);
             font-weight: 700;
             color: rgba(201,168,76,0.04);
             line-height: 0.8;
@@ -478,7 +479,7 @@ export default function ServicesPage() {
           .service-features-grid {
             list-style: none;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: var(--space-3);
             margin-bottom: var(--space-6);
           }
