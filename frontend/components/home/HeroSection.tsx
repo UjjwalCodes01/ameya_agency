@@ -226,12 +226,31 @@ export default function HeroSection() {
       style={{
         position: "relative",
         minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
         overflow: "hidden",
         background: "var(--color-bg-primary)",
       }}
     >
+      <style>{`
+        .hero-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: clamp(40px, 6vw, 80px);
+          min-height: 100vh;
+          padding-top: var(--section-py);
+          padding-bottom: var(--section-py);
+          padding-left: var(--section-px);
+          padding-right: var(--section-px);
+        }
+        @media (max-width: 900px) {
+          .hero-container {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+          }
+          .hero-orbit { display: none; }
+        }
+      `}</style>
       {/* Ambient gold glow blobs */}
       <div style={{
         position: "absolute", top: "10%", left: "-5%",
@@ -255,20 +274,14 @@ export default function HeroSection() {
 
       {/* Main Content — Split Screen */}
       <div
-        className="container"
+        className="container hero-container"
         style={{
           position: "relative",
           zIndex: 1,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "clamp(40px, 6vw, 80px)",
-          padding: "var(--section-py) var(--section-px)",
-          minHeight: "100vh",
         }}
       >
         {/* Left — Typography */}
-        <div style={{ flex: 1, maxWidth: "620px" }}>
+        <div style={{ flex: 1, maxWidth: "620px", width: "100%" }}>
           {/* Eyebrow */}
           <div style={{
             opacity: visible ? 1 : 0,
@@ -337,6 +350,7 @@ export default function HeroSection() {
           <div style={{
             display: "flex",
             gap: "var(--space-10)",
+            flexWrap: "wrap",
             opacity: visible ? 1 : 0,
             transition: "opacity 0.7s ease 1300ms",
           }}>

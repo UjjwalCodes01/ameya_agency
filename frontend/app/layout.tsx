@@ -101,7 +101,7 @@ export default function RootLayout({
           </Script>
         )}
       </head>
-      <body className="min-h-full flex flex-col antialiased">
+      <body className="min-h-full flex flex-col antialiased overflow-x-hidden">
         <Navbar />
         <main style={{ flex: 1, paddingTop: "var(--nav-height)" }}>
           <PageTransition>{children}</PageTransition>

@@ -77,14 +77,15 @@ export default function ClientShowcase() {
           maxWidth: "480px",
           margin: "0 auto",
           height: "600px",
+          overflow: "hidden",
         }}>
           {clients.map((client, i) => {
             const pos = order.indexOf(i);
             const zIndex = 10 - pos;
-            const translateY = pos === 0 ? 0 : pos === 1 ? -15 : 15;
-            const translateX = pos === 0 ? 0 : pos === 1 ? 30 : -30;
-            const scale = 1; // Keep scale consistent for scattered look
-            const rotate = pos === 0 ? "0deg" : pos === 1 ? "10deg" : "-8deg";
+            const translateY = pos === 0 ? 0 : pos === 1 ? -10 : 10;
+            const translateX = pos === 0 ? 0 : pos === 1 ? 12 : -12;
+            const scale = 1;
+            const rotate = pos === 0 ? "0deg" : pos === 1 ? "4deg" : "-3deg";
 
             return (
               <div

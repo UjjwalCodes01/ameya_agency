@@ -200,8 +200,10 @@ export default function Navbar() {
           alignItems:      "center",
           justifyContent:  "center",
           transform:       menuOpen ? "translateX(0)" : "translateX(100%)",
-          transition:      "transform var(--transition-slow)",
+          transition:      "transform var(--transition-slow), visibility 0s linear var(--transition-slow)",
           willChange:      "transform",
+          visibility:      menuOpen ? "visible" : "hidden",
+          pointerEvents:   menuOpen ? "auto" : "none",
         }}
       >
         {/* Close button */}

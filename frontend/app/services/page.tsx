@@ -188,10 +188,11 @@ function ServiceCard({ s, index, total }: { s: typeof services[0]; index: number
         padding: "clamp(32px, 4vw, 56px)",
         transition: `border-color var(--transition-base), transform 0.4s ease, box-shadow 0.4s ease`,
         boxShadow: "0 -20px 40px rgba(0,0,0,0.5)", // Shadow to separate from card behind
-        zIndex: index + 10, // Ensure proper stacking
+        zIndex: index + 10,
         marginBottom: "var(--space-8)",
         willChange: "transform",
         minHeight: "400px",
+        overflow: "hidden",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -206,10 +207,10 @@ function ServiceCard({ s, index, total }: { s: typeof services[0]; index: number
         borderRadius: "inherit",
       }} />
 
-      <div style={{ position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "var(--space-8)", alignItems: "start" }}>
+      <div className="service-card-inner">
         {/* Left — content */}
-        <div>
-          <div style={{ display: "flex", alignItems: "center", gap: "var(--space-5)", marginBottom: "var(--space-5)" }}>
+        <div style={{ minWidth: 0 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "var(--space-5)", marginBottom: "var(--space-5)", flexWrap: "wrap" }}>
             <div style={{
               color: "var(--color-gold)",
               background: "var(--color-bg-primary)",
@@ -221,21 +222,21 @@ function ServiceCard({ s, index, total }: { s: typeof services[0]; index: number
             }}>
               {icons[s.icon]}
             </div>
-            <div>
+            <div style={{ minWidth: 0 }}>
               <p style={{ fontSize: "var(--text-xs)", color: "var(--color-gold)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", marginBottom: "var(--space-1)" }}>
                 {s.tagline}
               </p>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2 }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2 }}>
                 {s.title}
               </h2>
             </div>
           </div>
 
-          <p style={{ fontSize: "var(--text-large)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", marginBottom: "var(--space-6)", maxWidth: "560px" }}>
+          <p style={{ fontSize: "var(--text-large)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", marginBottom: "var(--space-6)" }}>
             {s.desc}
           </p>
 
-          <ul style={{ listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "var(--space-3)", marginBottom: "var(--space-6)" }}>
+          <ul className="service-features-grid">
             {s.features.map((f) => (
               <li key={f} style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", fontSize: "var(--text-base)", color: "var(--color-text-secondary)" }}>
                 <span style={{ color: "var(--color-gold)", fontSize: "0.75rem", flexShrink: 0 }}>✦</span>
@@ -253,21 +254,14 @@ function ServiceCard({ s, index, total }: { s: typeof services[0]; index: number
           </Link>
         </div>
 
-        {/* Right — big number watermark */}
-        <div style={{
-          fontFamily: "var(--font-display)",
-          fontSize: "clamp(8rem, 12vw, 15rem)",
-          fontWeight: 700,
-          color: "rgba(201,168,76,0.04)",
-          lineHeight: 0.8,
-          userSelect: "none",
-          flexShrink: 0,
-          alignSelf: "start",
-          display: "block",
-          marginTop: "-20px",
-          transform: hovered ? "scale(1.05) translateZ(0)" : "scale(1) translateZ(0)",
-          transition: "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)",
-        }}>
+        {/* Right — big number watermark (hidden on mobile via CSS) */}
+        <div
+          className="service-card-watermark"
+          style={{
+            transform: hovered ? "scale(1.05) translateZ(0)" : "scale(1) translateZ(0)",
+            transition: "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)",
+          }}
+        >
           0{index + 1}
         </div>
       </div>
@@ -424,9 +418,10 @@ export default function ServicesPage() {
           }
           .split-content {
             flex: 1;
+            min-width: 0;
             display: flex;
             flex-direction: column;
-            padding-bottom: 20vh; /* space for last card to scroll comfortably */
+            padding-bottom: 20vh;
           }
           .sidebar-link {
             display: flex;
@@ -462,7 +457,42 @@ export default function ServicesPage() {
             color: var(--color-text-secondary);
             transform: translateX(5px);
           }
-          
+          .service-card-inner {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: var(--space-8);
+            align-items: start;
+          }
+          .service-card-watermark {
+            font-family: var(--font-display);
+            font-size: clamp(6rem, 10vw, 15rem);
+            font-weight: 700;
+            color: rgba(201,168,76,0.04);
+            line-height: 0.8;
+            user-select: none;
+            flex-shrink: 0;
+            align-self: start;
+            display: block;
+            margin-top: -20px;
+          }
+          .service-features-grid {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-3);
+            margin-bottom: var(--space-6);
+          }
+          @media (max-width: 600px) {
+            .service-card-inner {
+              grid-template-columns: 1fr;
+            }
+            .service-card-watermark {
+              display: none;
+            }
+            .service-features-grid {
+              grid-template-columns: 1fr;
+            }
+          }
           @media (min-width: 1024px) {
             .split-sidebar { display: block; }
             .service-card-stack:nth-last-child(1) { margin-bottom: 0 !important; }
