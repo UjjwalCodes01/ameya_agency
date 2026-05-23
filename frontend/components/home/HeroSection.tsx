@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function HeroSection() {
@@ -29,6 +30,29 @@ export default function HeroSection() {
         background: "var(--color-bg-primary)",
       }}
     >
+      {/* Background Logo Watermark */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        opacity: 0.02,
+        pointerEvents: "none",
+        zIndex: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden",
+      }}>
+        <div style={{ position: "relative", width: "150vw", height: "100vh", minWidth: "1200px" }}>
+          <Image
+            src="/anaya.png"
+            alt=""
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            priority
+          />
+        </div>
+      </div>
+
       {/* Ambient gold glow blobs */}
       <div style={{
         position: "absolute", top: "15%", left: "10%",
