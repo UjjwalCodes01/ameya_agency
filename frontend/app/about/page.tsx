@@ -58,14 +58,14 @@ const pillars = [
 
 /* ── Industries ──────────────────────────────────────────── */
 const industries = [
-  { label: "Music & Entertainment" },
-  { label: "Agriculture & Organic" },
-  { label: "Fashion & Lifestyle" },
-  { label: "Food & Beverage" },
-  { label: "Technology" },
-  { label: "Retail & E-commerce" },
-  { label: "Health & Wellness" },
-  { label: "Real Estate" },
+  { label: "Music & Entertainment", colSpan: 2, rowSpan: 2, bg: "linear-gradient(135deg, #1a1a1a, #0a0a0a)", color: "var(--color-gold)", desc: "Amplifying artists and labels with strategies that turn listeners into loyal fanbases." },
+  { label: "Agriculture", colSpan: 2, rowSpan: 1, bg: "linear-gradient(135deg, #0a0a0a, #111)", color: "var(--color-text-primary)", desc: "Modernising agritech and organic brands for a digital-first world." },
+  { label: "Fashion", colSpan: 1, rowSpan: 1, bg: "var(--color-bg-tertiary)", color: "var(--color-text-secondary)" },
+  { label: "Food & Bev", colSpan: 1, rowSpan: 1, bg: "var(--color-bg-tertiary)", color: "var(--color-text-secondary)" },
+  { label: "Technology", colSpan: 2, rowSpan: 1, bg: "linear-gradient(45deg, #111, #0a0a0a)", color: "var(--color-text-primary)", desc: "Scaling SaaS and hardware brands through precision B2B and B2C funnels." },
+  { label: "E-commerce", colSpan: 2, rowSpan: 1, bg: "var(--color-bg-tertiary)", color: "var(--color-text-primary)", desc: "Driving massive ROAS and compounding lifetime value." },
+  { label: "Wellness", colSpan: 1, rowSpan: 1, bg: "var(--color-bg-tertiary)", color: "var(--color-text-secondary)" },
+  { label: "Real Estate", colSpan: 3, rowSpan: 1, bg: "linear-gradient(to right, #0a0a0a, #1a1a1a)", color: "var(--color-gold)", desc: "Generating high-intent leads for luxury and commercial properties." },
 ];
 
 /* ── Differentiators ─────────────────────────────────────── */
@@ -77,6 +77,135 @@ const whyUs = [
   "Built for long-term growth, not short-term vanity metrics",
   "We only take on clients we know we can deliver results for",
 ];
+
+const BentoCard = ({ ind, i, revealStyle }: { ind: any, i: number, revealStyle: any }) => {
+  const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const ref = useRef<HTMLDivElement>(null);
+  
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const xPct = (x / rect.width) * 100;
+    const yPct = (y / rect.height) * 100;
+    
+    // Subtle tilt for large boxes
+    const rotateX = ((y / rect.height) - 0.5) * -10;
+    const rotateY = ((x / rect.width) - 0.5) * 10;
+    
+    setGlare({ x: xPct, y: yPct, opacity: 1 });
+    setRotate({ x: rotateX, y: rotateY });
+  };
+  
+  const handleMouseLeave = () => {
+    setGlare(prev => ({ ...prev, opacity: 0 }));
+    setRotate({ x: 0, y: 0 });
+  };
+
+  return (
+    <div 
+      className={`bento-card col-span-${ind.colSpan} row-span-${ind.rowSpan}`}
+      style={{ perspective: "1200px" }}
+    >
+      <div
+        ref={ref}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          position: "relative",
+          background: ind.bg,
+          border: "1px solid var(--color-border)",
+          borderRadius: "var(--radius-xl)",
+          padding: "clamp(24px, 4vw, 40px)",
+          textAlign: "left",
+          opacity: revealStyle.opacity,
+          transition: glare.opacity 
+            ? "none" 
+            : (revealStyle.opacity === 1 ? "all 0.6s cubic-bezier(0.25, 1, 0.5, 1)" : `all 0.8s cubic-bezier(0.25, 1, 0.5, 1) ${i * 80 + 100}ms`),
+          transform: glare.opacity 
+            ? `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale(1.02)` 
+            : revealStyle.transform,
+          transformStyle: "preserve-3d",
+          overflow: "hidden",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          cursor: "crosshair",
+        }}
+      >
+        {/* Subtle background glow */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(201,168,76,0.15) 0%, transparent 60%)`,
+          opacity: glare.opacity,
+          transition: "opacity 0.4s ease",
+          pointerEvents: "none",
+          zIndex: 0,
+        }} />
+
+        {/* Content */}
+        <div style={{ position: "relative", zIndex: 1, transform: glare.opacity ? "translateZ(20px)" : "none", transition: "transform 0.4s ease-out" }}>
+          <div style={{ 
+            fontFamily: "var(--font-display)", 
+            fontSize: "var(--text-small)", 
+            color: "var(--color-gold)", 
+            letterSpacing: "2px",
+            marginBottom: "var(--space-6)"
+          }}>
+            0{i + 1}
+          </div>
+          
+          <h3 style={{ 
+            fontFamily: "var(--font-display)", 
+            fontSize: ind.rowSpan === 2 ? "clamp(2rem, 5vw, 4.5rem)" : "clamp(1.5rem, 3vw, 2.5rem)", 
+            fontWeight: 600, 
+            lineHeight: 1.1, 
+            color: ind.color,
+            transition: "color 0.4s ease",
+            textShadow: glare.opacity ? "0 10px 30px rgba(0,0,0,0.5)" : "none"
+          }}>
+            {ind.label}
+          </h3>
+
+          {ind.desc && (
+            <p style={{
+              marginTop: "var(--space-4)",
+              color: "var(--color-text-secondary)",
+              fontSize: "var(--text-base)",
+              lineHeight: 1.5,
+              opacity: glare.opacity ? 1 : 0.7,
+              transition: "opacity 0.4s ease",
+            }}>
+              {ind.desc}
+            </p>
+          )}
+        </div>
+
+        {/* Huge Watermark Number */}
+        <div style={{
+          position: "absolute",
+          bottom: "-5%",
+          right: "-5%",
+          fontFamily: "var(--font-display)",
+          fontSize: ind.rowSpan === 2 ? "18rem" : "10rem",
+          fontWeight: 700,
+          color: "rgba(255,255,255,0.02)",
+          lineHeight: 1,
+          pointerEvents: "none",
+          transition: "transform 0.4s ease-out",
+          transform: glare.opacity ? "scale(1.1) translateZ(10px)" : "scale(1)",
+        }}>
+          {i + 1}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 /* ── Page Component ──────────────────────────────────────── */
 export default function AboutPage() {
@@ -373,21 +502,45 @@ export default function AboutPage() {
             <h2>From Music to <span style={{ color: "var(--color-gold)" }}>Agriculture & Beyond</span></h2>
             <p>We bring strategic thinking and creative excellence to every industry we work in.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "var(--space-4)" }}>
+          
+          <style>{`
+            .crazy-bento-grid {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              grid-auto-rows: 240px;
+              gap: var(--space-4);
+            }
+            .col-span-1 { grid-column: span 1; }
+            .col-span-2 { grid-column: span 2; }
+            .col-span-3 { grid-column: span 3; }
+            .col-span-4 { grid-column: span 4; }
+            .row-span-1 { grid-row: span 1; }
+            .row-span-2 { grid-row: span 2; }
+            
+            @media (max-width: 1024px) {
+              .crazy-bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 220px;
+              }
+              .col-span-3 { grid-column: span 2; } /* tablet fix */
+            }
+            @media (max-width: 640px) {
+              .crazy-bento-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+              }
+              .col-span-1, .col-span-2, .col-span-3, .col-span-4 {
+                grid-column: span 1 !important;
+              }
+              .row-span-1, .row-span-2 {
+                grid-row: span 1 !important;
+              }
+            }
+          `}</style>
+
+          <div className="crazy-bento-grid">
             {industries.map((ind, i) => (
-              <div key={ind.label} style={{
-                background: "var(--color-bg-tertiary)",
-                border: "1px solid var(--color-border)",
-                borderRadius: "var(--radius-lg)",
-                padding: "var(--space-6)",
-                textAlign: "center",
-                opacity: indR.style.opacity,
-                transform: indR.style.transform,
-                transition: `all 0.6s ease ${i * 60 + 100}ms`,
-              }}>
-                <div style={{ width: "8px", height: "8px", background: "var(--color-gold)", margin: "0 auto var(--space-3)", borderRadius: "1px" }} />
-                <div style={{ fontSize: "var(--text-xs)", color: "var(--color-text-secondary)", lineHeight: 1.4, fontWeight: 400 }}>{ind.label}</div>
-              </div>
+              <BentoCard key={ind.label} ind={ind} i={i} revealStyle={indR.style} />
             ))}
           </div>
         </div>

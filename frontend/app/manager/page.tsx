@@ -196,14 +196,15 @@ function ManagerCard({ manager, delay }: { manager: typeof managers[0]; delay: n
         {/* Avatar */}
         <div style={{
           width: "120px", height: "120px", borderRadius: "50%",
-          border: "1px solid var(--color-gold)",
+          borderWidth: "1px", borderStyle: "solid", 
+          borderColor: hovered ? "var(--color-gold-light)" : "var(--color-gold)",
           background: "var(--color-bg-primary)",
           display: "flex", alignItems: "center", justifyContent: "center",
           margin: "0 auto var(--space-5)",
           fontFamily: "var(--font-display)", fontSize: "2rem", fontWeight: 600,
           color: "var(--color-gold)",
-          transition: "border-color 0.35s ease",
-          ...(hovered && { borderColor: "var(--color-gold-light)", boxShadow: "0 0 20px rgba(201,168,76,0.2)" }),
+          transition: "border-color 0.35s ease, box-shadow 0.35s ease",
+          boxShadow: hovered ? "0 0 20px rgba(201,168,76,0.2)" : "none",
         }}>
           {manager.initials}
         </div>

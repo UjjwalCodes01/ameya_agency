@@ -170,37 +170,50 @@ function useReveal() {
   return { ref, visible };
 }
 
-/* ── Service Card ─────────────────────────────────────────── */
-function ServiceCard({ s, index }: { s: typeof services[0]; index: number }) {
-  const { ref, visible } = useReveal();
+/* ── Service Card (Sticky Stacking) ───────────────────────── */
+function ServiceCard({ s, index, total }: { s: typeof services[0]; index: number; total: number }) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <div
-      ref={ref}
       id={s.id}
+      className="service-card-stack"
       style={{
-        background: `linear-gradient(135deg, ${s.accent} 0%, var(--color-bg-tertiary) 100%)`,
-        border: `1px solid ${hovered ? "var(--color-border-gold)" : "var(--color-border)"}`,
+        position: "sticky",
+        top: `calc(100px + ${index * 30}px)`,
+        background: `linear-gradient(135deg, var(--color-bg-tertiary) 0%, #0a0a0a 100%)`,
+        border: `1px solid ${hovered ? "var(--color-gold)" : "var(--color-border)"}`,
+        borderTop: `1px solid ${hovered ? "var(--color-gold)" : "rgba(201,168,76,0.3)"}`,
         borderRadius: "var(--radius-xl)",
         padding: "clamp(32px, 4vw, 56px)",
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(40px)",
-        transition: `opacity 0.7s ease ${index * 80}ms, transform 0.7s ease ${index * 80}ms, border-color var(--transition-base)`,
-        scrollMarginTop: "calc(var(--nav-height) + 20px)",
+        transition: `border-color var(--transition-base), transform 0.4s ease, box-shadow 0.4s ease`,
+        boxShadow: "0 -20px 40px rgba(0,0,0,0.5)", // Shadow to separate from card behind
+        zIndex: index + 10, // Ensure proper stacking
+        marginBottom: "var(--space-8)",
+        willChange: "transform",
+        minHeight: "400px",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "var(--space-8)", alignItems: "start" }}>
+      {/* Subtle Accent Glow */}
+      <div style={{
+        position: "absolute", inset: 0,
+        background: `radial-gradient(circle at 100% 0%, ${s.accent} 0%, transparent 60%)`,
+        opacity: hovered ? 1 : 0.4,
+        transition: "opacity 0.6s ease",
+        pointerEvents: "none",
+        borderRadius: "inherit",
+      }} />
+
+      <div style={{ position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: "var(--space-8)", alignItems: "start" }}>
         {/* Left — content */}
         <div>
-          {/* Icon + Title row */}
           <div style={{ display: "flex", alignItems: "center", gap: "var(--space-5)", marginBottom: "var(--space-5)" }}>
             <div style={{
               color: "var(--color-gold)",
-              background: "var(--color-gold-muted)",
-              border: "1px solid var(--color-gold-border)",
+              background: "var(--color-bg-primary)",
+              border: "1px solid var(--color-border-gold)",
               borderRadius: "var(--radius-md)",
               padding: "var(--space-3)",
               display: "flex", alignItems: "center", justifyContent: "center",
@@ -212,49 +225,48 @@ function ServiceCard({ s, index }: { s: typeof services[0]; index: number }) {
               <p style={{ fontSize: "var(--text-xs)", color: "var(--color-gold)", letterSpacing: "var(--tracking-wider)", textTransform: "uppercase", marginBottom: "var(--space-1)" }}>
                 {s.tagline}
               </p>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2 }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: 1.2 }}>
                 {s.title}
               </h2>
             </div>
           </div>
 
-          {/* Description */}
-          <p style={{ fontSize: "var(--text-base)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", marginBottom: "var(--space-6)", maxWidth: "560px" }}>
+          <p style={{ fontSize: "var(--text-large)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", marginBottom: "var(--space-6)", maxWidth: "560px" }}>
             {s.desc}
           </p>
 
-          {/* Features */}
-          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "var(--space-2)", marginBottom: "var(--space-6)" }}>
+          <ul style={{ listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "var(--space-3)", marginBottom: "var(--space-6)" }}>
             {s.features.map((f) => (
-              <li key={f} style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", fontSize: "var(--text-small)", color: "var(--color-text-secondary)" }}>
+              <li key={f} style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", fontSize: "var(--text-base)", color: "var(--color-text-secondary)" }}>
                 <span style={{ color: "var(--color-gold)", fontSize: "0.75rem", flexShrink: 0 }}>✦</span>
                 {f}
               </li>
             ))}
           </ul>
 
-          {/* Tags */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-2)", marginBottom: "var(--space-8)" }}>
             {s.tags.map((t) => <span key={t} className="tag">{t}</span>)}
           </div>
 
-          {/* CTA */}
           <Link href="/contact" className="btn btn-outline btn-sm">
-            Get a Quote →
+            Discuss this service →
           </Link>
         </div>
 
-        {/* Right — big number watermark (desktop) */}
+        {/* Right — big number watermark */}
         <div style={{
           fontFamily: "var(--font-display)",
-          fontSize: "clamp(5rem, 8vw, 9rem)",
+          fontSize: "clamp(8rem, 12vw, 15rem)",
           fontWeight: 700,
-          color: "rgba(201,168,76,0.06)",
-          lineHeight: 1,
+          color: "rgba(201,168,76,0.04)",
+          lineHeight: 0.8,
           userSelect: "none",
           flexShrink: 0,
-          alignSelf: "center",
+          alignSelf: "start",
           display: "block",
+          marginTop: "-20px",
+          transform: hovered ? "scale(1.05) translateZ(0)" : "scale(1) translateZ(0)",
+          transition: "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)",
         }}>
           0{index + 1}
         </div>
@@ -326,14 +338,43 @@ function CustomPricingCTA() {
   );
 }
 
+/* ── Scroll Spy Hook ──────────────────────────────────────── */
+function useScrollSpy(ids: string[]) {
+  const [activeId, setActiveId] = useState<string>(ids[0]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-30% 0px -50% 0px" } // Triggers when element is in upper middle of screen
+    );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [ids]);
+
+  return activeId;
+}
+
 /* ── Page ─────────────────────────────────────────────────── */
 export default function ServicesPage() {
+  const activeId = useScrollSpy(services.map(s => s.id));
+
   return (
     <>
       {/* Hero */}
       <section style={{
         background: "var(--color-bg-primary)",
-        padding: "clamp(80px, 10vw, 140px) 0 clamp(60px, 8vw, 100px)",
+        padding: "clamp(80px, 10vw, 140px) 0 clamp(40px, 6vw, 60px)",
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
@@ -359,30 +400,114 @@ export default function ServicesPage() {
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
             }}>Win Online</span>
           </h1>
-          <p style={{ color: "var(--color-text-secondary)", maxWidth: "560px", margin: "0 auto var(--space-10)", lineHeight: "var(--leading-relaxed)", fontSize: "var(--text-large)" }}>
+          <p style={{ color: "var(--color-text-secondary)", maxWidth: "560px", margin: "0 auto", lineHeight: "var(--leading-relaxed)", fontSize: "var(--text-large)" }}>
             From social media to search visibility to brand identity — we cover every layer of your digital presence, with strategy at the core of everything we do.
           </p>
-          {/* Jump links */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-3)", justifyContent: "center" }}>
-            {services.map((s) => (
-              <a key={s.id} href={`#${s.id}`} className="tag" style={{ cursor: "pointer", textDecoration: "none" }}>
-                {s.title.split(" ")[0]}
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Services List */}
-      <section style={{ background: "var(--color-bg-primary)", paddingBottom: "var(--section-py)" }}>
-        <div className="container" style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 450px), 1fr))",
-          gap: "var(--space-8)"
-        }}>
-          {services.map((s, i) => <ServiceCard key={s.id} s={s} index={i} />)}
+      {/* Split Screen Services List */}
+      <section style={{ background: "var(--color-bg-primary)", paddingBottom: "var(--section-py)", position: "relative" }}>
+        
+        <style>{`
+          .split-container {
+            display: flex;
+            gap: var(--space-12);
+            align-items: flex-start;
+          }
+          .split-sidebar {
+            position: sticky;
+            top: 120px;
+            width: 320px;
+            flex-shrink: 0;
+            display: none;
+          }
+          .split-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20vh; /* space for last card to scroll comfortably */
+          }
+          .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            padding: var(--space-3) 0;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: var(--text-base);
+            transition: all 0.3s ease;
+            position: relative;
+          }
+          .sidebar-link::before {
+            content: '';
+            position: absolute;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 0;
+            width: 2px;
+            background: var(--color-gold);
+            transition: height 0.3s ease;
+          }
+          .sidebar-link.active {
+            color: var(--color-gold);
+            font-weight: 500;
+            transform: translateX(10px);
+          }
+          .sidebar-link.active::before {
+            height: 20px;
+          }
+          .sidebar-link:hover:not(.active) {
+            color: var(--color-text-secondary);
+            transform: translateX(5px);
+          }
+          
+          @media (min-width: 1024px) {
+            .split-sidebar { display: block; }
+            .service-card-stack:nth-last-child(1) { margin-bottom: 0 !important; }
+          }
+        `}</style>
+
+        <div className="container split-container">
+          
+          {/* Left Sticky Sidebar */}
+          <div className="split-sidebar">
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: "2rem", marginBottom: "var(--space-8)", color: "var(--color-text-primary)" }}>
+              Our Expertise
+            </h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)", borderLeft: "1px solid var(--color-border)", paddingLeft: "16px" }}>
+              {services.map((s, i) => (
+                <a 
+                  key={s.id} 
+                  href={`#${s.id}`} 
+                  className={`sidebar-link ${activeId === s.id ? 'active' : ''}`}
+                >
+                  <span style={{ fontSize: "var(--text-small)", fontFamily: "var(--font-mono)", opacity: 0.5 }}>0{i+1}</span>
+                  {s.title}
+                </a>
+              ))}
+            </div>
+            
+            {/* Contextual CTA in sidebar */}
+            <div style={{ marginTop: "var(--space-12)", padding: "var(--space-6)", background: "var(--color-bg-tertiary)", borderRadius: "var(--radius-lg)", border: "1px solid var(--color-border)" }}>
+              <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginBottom: "var(--space-4)" }}>
+                Not sure which service you need? Let's discuss your brand's unique challenges.
+              </p>
+              <Link href="/contact" className="btn btn-outline btn-sm" style={{ width: "100%", justifyContent: "center" }}>
+                Talk to an Expert
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Stacking Content */}
+          <div className="split-content">
+            {services.map((s, i) => <ServiceCard key={s.id} s={s} index={i} total={services.length} />)}
+          </div>
+
         </div>
-        <div className="container">
+
+        <div className="container" style={{ position: "relative", zIndex: 100 }}>
           <CustomPricingCTA />
         </div>
       </section>
