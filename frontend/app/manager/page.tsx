@@ -19,12 +19,7 @@ const managers = [
     title: "Manager",
     bio: "Oversees campaign execution and performance marketing operations across all client accounts.",
   },
-  {
-    name: "Aaditya Singhal",
-    initials: "AS",
-    title: "Manager",
-    bio: "Drives content strategy and creative direction ensuring every piece of content serves the brand.",
-  },
+
   {
     name: "Ujjwal Tyagi",
     initials: "UT",

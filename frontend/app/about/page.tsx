@@ -342,16 +342,7 @@ const teamMembers = [
     detail: "Oversees campaign execution and performance marketing operations across all client accounts.",
     linkedin: "https://linkedin.com/in/aadityasingh",
   },
-  {
-    idNumber: "ANY-003",
-    access: "LVL_BETA",
-    initials: "AS",
-    name: "Aaditya Singhal",
-    title: "Co-Founder & Content & Creative",
-    bio: "Content without strategy is just noise.",
-    detail: "Drives content strategy and creative direction ensuring every piece of content serves the brand.",
-    linkedin: "https://linkedin.com/in/aadityasinghal",
-  },
+
   {
     idNumber: "ANY-004",
     access: "LVL_GAMMA",
