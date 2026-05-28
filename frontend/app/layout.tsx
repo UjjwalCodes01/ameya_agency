@@ -56,8 +56,8 @@ export const metadata: Metadata = {
 
 // ── Analytics & Heatmap IDs ─────────────────────────────────
 // TODO: Replace these placeholder IDs before going live
-const GA_MEASUREMENT_ID  = "G-DQF6LEX2QN";   // Google Analytics 4 — get from analytics.google.com
-const MS_CLARITY_ID      = "wybfiouffg";     // Microsoft Clarity (free heatmap) — get from clarity.microsoft.com
+const GA_MEASUREMENT_ID: string = "G-DQF6LEX2QN";
+const MS_CLARITY_ID: string = "wybfiouffg";
 
 export default function RootLayout({
   children,
